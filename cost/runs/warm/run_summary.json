@@ -1,0 +1,38 @@
+{
+  "input": "data/cost_100.csv",
+  "db": "work/pilot.db",
+  "status": "completed",
+  "fresh": false,
+  "label_config": "jev-1.13.0+jevq-v1+schema-v1+advisor:claude-sonnet-5-5@0.5",
+  "workers": 1,
+  "phase": "initial",
+  "wall_seconds": 1.92,
+  "stage_seconds": {
+    "prepare": 0.0,
+    "enrich_jev": 0.109,
+    "enrich_advisor": 1.803,
+    "verify": 0.0,
+    "group_rank_memo_export": 0.007
+  },
+  "new_calls": 0,
+  "new_calls_by_role": {
+    "enrich": 0,
+    "verify": 0,
+    "group": 0,
+    "memo": 0
+  },
+  "new_failed_calls": 0,
+  "new_cost_usd": 0,
+  "jev_completed": 0,
+  "jev_failed": 0,
+  "advisor_relabelled": 0,
+  "counts": {
+    "source_rows": 100,
+    "completed": 100,
+    "quarantined": 0,
+    "cache_reused_ids": 0,
+    "needs_review": 3,
+    "quarantine_reasons": {}
+  },
+  "memo_problems": []
+}

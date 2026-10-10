@@ -1,0 +1,33 @@
+{
+  "input_sha256": "b358c6548b3fc2504991d51960d267b6d6f08c230101516b6ee3ba4036162b3a",
+  "issues": {
+    "ISS-access": {
+      "name": "Login and password failures",
+      "summary": "Users cannot get into their accounts because the password is rejected and ads are excessive."
+    },
+    "ISS-billing": {
+      "name": "Premium paywall restricting core features",
+      "summary": "Recent updates locked skipping, song choice, and playback behind Premium, prompting frustration and cancellations."
+    },
+    "ISS-catalog": {
+      "name": "Missing lyrics and song catalog gaps",
+      "summary": "Lyrics often fail to appear and many songs, including some genres, are unavailable or poorly recommended."
+    },
+    "ISS-downloads": {
+      "name": "Offline downloads not working",
+      "summary": "Offline mode fails to work and background downloading gets stuck until the app is reopened."
+    },
+    "ISS-other": {
+      "name": "General dissatisfaction with recent update",
+      "summary": "Users broadly describe the app as bad or useless after the latest update, with vague complaints about restrictions."
+    },
+    "ISS-playback": {
+      "name": "Playback crashes, stalls, and connectivity errors",
+      "summary": "The app crashes or stays on the loading screen, fails to play songs via assistant, stops mid-track, and has Wi-Fi connection problems."
+    },
+    "ISS-usability": {
+      "name": "Frequent ads and restrictive skip limits",
+      "summary": "Ads appear every song or two and skip limits plus random playlist shuffling frustrate users who want simple control."
+    }
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "verify_config": "claude-haiku-5-5+verify-v1+schema-v1",
+  "enrich_config": "jev-1.13.0+jevq-v1+schema-v1+advisor:claude-sonnet-5-5@0.5",
+  "sampled": 20,
+  "verified": 20,
+  "agreement": {
+    "topic": 0.95,
+    "intent": 0.85,
+    "severity": 0.7
+  },
+  "disagreements": [
+    {
+      "review_id": "ebc64fe2-9553-4528-87d5-cb4bb9783be6",
+      "text": "I just want to listen to one song but nooo I have to go through A HOLE PLAYLIST AND I CAN ONLY SKIP 6 OF THEM 6!!!",
+      "enrich": {
+        "topic": "usability",
+        "intent": "complaint",
+        "severity": 3
+      },
+      "verify": {
+        "topic": "usability",
+        "intent": "complaint",
+        "severity": 2
+      },
+      "disagree": [
+        "severity"
+      ]
+    },
+    {
+      "review_id": "618d1dbb-0186-4537-923a-7b4dabf19afb",
+      "text": "Please stop with the recommendations! I use the premium family sub and I want to listen to my playlist without your recommendation adds. I am not interested in new music based on my preferences. If I wanted these songs I'd use a random playlist not not make my own! I'll start using Amazon music or apple if you don't.",
+      "enrich": {
+        "topic": "catalog",
+        "intent": "cancellation",
+        "severity": 3
+      },
+      "verify": {
+        "topic": "usability",
+        "intent": "complaint",
+        "severity": 2
+      },
+      "disagree": [
+        "topic",
+        "intent",
+        "severity"
+      ]
+    },
+    {
+      "review_id": "1807cc68-ba99-4edc-b6f1-2a1478e69109",
+      "text": "I love Spotify recommendations music type before more than now. It was more songs and updated to newest song.",
+      "enrich": {
+        "topic": "catalog",
+        "intent": "complaint",
+        "severity": 2
+      },
+      "verify": {
+        "topic": "catalog",
+        "intent": "praise",
+        "severity": 1
+      },
+      "disagree": [
+        "intent",
+        "severity"
+      ]
+    },
+    {
+      "review_id": "b9a3e661-0eac-4cc9-a30e-7b1e11ef1315",
+      "text": "I ended up on Spotify because I wanted to listen to a specific podcast I really thought I was a Pandora lover, but I haven't turned my Pandora on since I loaded Spotify.",
+      "enrich": {
+        "topic": "other",
+        "intent": "praise",
+        "severity": 1
+      },
+      "verify": {
+        "topic": "other",
+        "intent": "complaint",
+        "severity": 2
+      },
+      "disagree": [
+        "intent",
+        "severity"
+      ]
+    },
+    {
+      "review_id": "85383985-844d-4f9b-bcd9-d6016ac35f6b",
+      "text": "This app is nice but adds are too much",
+      "enrich": {
+        "topic": "usability",
+        "intent": "complaint",
+        "severity": 3
+      },
+      "verify": {
+        "topic": "usability",
+        "intent": "complaint",
+        "severity": 2
+      },
+      "disagree": [
+        "severity"
+      ]
+    },
+    {
+      "review_id": "46ff0c74-5e86-4e5b-b4cd-36201aab0f9e",
+      "text": "I am unable to use my Google assistant on the app.it says playing your Spotify playlist but do not play the songs",
+      "enrich": {
+        "topic": "playback",
+        "intent": "complaint",
+        "severity": 4
+      },
+      "verify": {
+        "topic": "playback",
+        "intent": "complaint",
+        "severity": 3
+      },
+      "disagree": [
+        "severity"
+      ]
+    }
+  ]
+}

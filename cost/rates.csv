@@ -1,0 +1,7 @@
+provider,model,item,unit,price_usd_per_unit,source,checked
+typesafe,jev-1.13.0,input_tokens,token,0.000000042,https://flaviocopes.com/jev-pricing/ (third-party; no official TypeSafe price page found),2026-10-10
+typesafe,jev-1.13.0,output_tokens,token,0,https://flaviocopes.com/jev-pricing/ (output tokens listed as free),2026-10-10
+anthropic,claude-haiku-5-5,input_tokens,token,0.00000010,https://platform.claude.com/docs/en/about-claude/pricing,2026-10-10
+anthropic,claude-haiku-5-5,output_tokens,token,0.00000050,https://platform.claude.com/docs/en/about-claude/pricing,2026-10-10
+anthropic,claude-sonnet-5-5,input_tokens,token,0.0000020,https://platform.claude.com/docs/en/about-claude/pricing,2026-10-10
+anthropic,claude-sonnet-5-5,output_tokens,token,0.0000100,https://platform.claude.com/docs/en/about-claude/pricing,2026-10-10

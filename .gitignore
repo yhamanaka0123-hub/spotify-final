@@ -5,3 +5,10 @@
 
 # Large raw dataset (97.4 MB) — not committed
 data/spotify_reviews_18months.csv
+
+# Python
+.venv/
+__pycache__/
+
+# Local working databases / large intermediates
+work/
