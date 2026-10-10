@@ -1,0 +1,7 @@
+# Secrets (keep only the blank .env.example)
+.env
+.env.*
+!.env.example
+
+# Large raw dataset (97.4 MB) — not committed
+data/spotify_reviews_18months.csv
