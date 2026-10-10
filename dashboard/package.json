@@ -1,0 +1,14 @@
+{
+  "name": "spotify-insight-dashboard",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "esbuild src/index.mjs --bundle --platform=node --target=node24 --format=esm --minify --loader:.html=text --banner:js=\"import{createRequire as ___cr}from'module';import{fileURLToPath as ___f}from'url';import{dirname as ___d}from'path';const require=___cr(import.meta.url);const __filename=___f(import.meta.url);const __dirname=___d(__filename);\" --outfile=dist/index.mjs"
+  },
+  "dependencies": {
+    "pg": "^8.16.3"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.10"
+  }
+}

@@ -18,6 +18,7 @@ import random
 import re
 import sqlite3
 import sys
+import threading
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
@@ -27,11 +28,29 @@ from pipeline.runtime import BudgetExceeded, Run, load_env
 
 ADVISOR_MODEL = "claude-sonnet-5-5"
 ADVISOR_THRESHOLD = 0.5      # min(topic, intent) Jev confidence below this -> advisor
-ADVISOR_MAX_FRACTION = 0.03  # at most 3% of in-scope texts go to the advisor
+ADVISOR_MAX_FRACTION = 0.01  # at most 1% of in-scope texts go to the advisor (Sonnet output is costly)
 ADVISOR_BATCH = 20           # reviews per advisor request (contract max is 50)
 LABEL_CONFIG = f"{labels.LABEL_CONFIG}+advisor:{ADVISOR_MODEL}@{ADVISOR_THRESHOLD}"
 JEV_RESERVE_USD = 3000 * 0.000000042  # worst-case 3k input tokens per Jev call
 QUOTE_FULL_TEXT_MAX = 200    # short reviews: the whole original text is the evidence quote
+JEV_MAX_RPS = 18             # shared request-rate limit across workers (Jev documents 1,200 req/min)
+MAX_CONSECUTIVE_FAILURES = 15  # circuit breaker: e.g. exhausted credits or an outage
+GOLDEN_CSV = "data/golden_50_to_label.csv"
+
+
+class RateLimiter:
+    def __init__(self, rps):
+        self.interval, self.next_at, self.lock = 1.0 / rps, 0.0, threading.Lock()
+
+    def wait(self):
+        with self.lock:
+            now = time.time()
+            at = max(now, self.next_at)
+            self.next_at = at + self.interval
+        time.sleep(max(0.0, at - now))
+
+
+LIMITER = RateLimiter(JEV_MAX_RPS)
 
 RESULTS_SCHEMA = """
 CREATE TABLE IF NOT EXISTS results (
@@ -93,6 +112,7 @@ def jev_classify(client, run, text_key, text, review_id):
     last = None
     for attempt in (1, 2):
         run.reserve(JEV_RESERVE_USD)
+        LIMITER.wait()
         started, actual = time.time(), 0.0
         try:
             resp = client.system_one(state=text, questions=labels.QUESTIONS, model=labels.JEV_MODEL)
@@ -161,7 +181,7 @@ def run_jev(con, run, workers, stop_after):
     if stop_after is not None:
         todo = todo[:stop_after]
     print(f"[enrich] {len(todo)} pending distinct texts, workers={workers}, label_config={LABEL_CONFIG}")
-    done = failed = 0
+    done = failed = streak = 0
     t0 = time.time()
     with ThreadPoolExecutor(max_workers=workers) as pool:
         futures = {pool.submit(jev_classify, client, run, k, text, rid): k for k, text, rid in todo}
@@ -171,6 +191,7 @@ def run_jev(con, run, workers, stop_after):
                 try:
                     save_result(con, fut.result())  # main thread is the single writer
                     done += 1
+                    streak = 0
                 except BudgetExceeded as e:
                     print(f"[enrich] STOP budget: {e}")
                     pool.shutdown(cancel_futures=True)
@@ -178,6 +199,11 @@ def run_jev(con, run, workers, stop_after):
                 except Exception as e:
                     save_failure(con, key, e)
                     failed += 1
+                    streak += 1
+                    if streak >= MAX_CONSECUTIVE_FAILURES:
+                        print(f"[enrich] STOP circuit breaker: {streak} consecutive failures, last: {e}")
+                        pool.shutdown(cancel_futures=True)
+                        break
                 if (done + failed) % 500 == 0:
                     rate = (done + failed) / (time.time() - t0)
                     print(f"[enrich] {done} done, {failed} failed, {rate:.1f}/s, spent ${run.spent:.4f}")
@@ -206,19 +232,21 @@ def _criteria(q):
     return "; ".join(f"{k} = {v}" for k, v in q.criteria.items())
 
 
-def run_advisor(con, run):
+def run_advisor(con, run, since=0.0):
+    """Advise only texts Jev completed at/after `since` (this phase), so a resumed run never re-sends
+    texts saved before the checkpoint. Cap: ADVISOR_MAX_FRACTION of the texts completed in that window."""
     import anthropic
-    n_scope = con.execute("SELECT COUNT(*) FROM texts WHERE in_scope = 1").fetchone()[0]
-    cap = int(n_scope * ADVISOR_MAX_FRACTION)
-    used = con.execute("SELECT COUNT(*) FROM results WHERE label_config=? AND decided_by='advisor'",
-                       (LABEL_CONFIG,)).fetchone()[0]
+    window = con.execute("SELECT COUNT(*) FROM results WHERE label_config=? AND created_at >= ?",
+                         (LABEL_CONFIG, since)).fetchone()[0]
+    cap = int(window * ADVISOR_MAX_FRACTION + 0.999)
     rows = con.execute("""
         SELECT r.text_key, t.review_text, r.source_review_id FROM results r JOIN texts t USING (text_key)
-        WHERE r.label_config=? AND r.decided_by='jev' AND MIN(r.conf_topic, r.conf_intent) < ?
-        ORDER BY MIN(r.conf_topic, r.conf_intent)
-    """, (LABEL_CONFIG, ADVISOR_THRESHOLD)).fetchall()
-    rows = rows[:max(0, cap - used)]
-    print(f"[advisor] {len(rows)} low-confidence texts to {ADVISOR_MODEL} (cap {cap}, already {used})")
+        WHERE r.label_config=? AND r.decided_by='jev' AND r.created_at >= ? AND MIN(r.conf_topic, r.conf_intent) < ?
+        ORDER BY MIN(r.conf_topic, r.conf_intent), r.text_key
+    """, (LABEL_CONFIG, since, ADVISOR_THRESHOLD)).fetchall()
+    rows = rows[:cap]
+    print(f"[advisor] {len(rows)} low-confidence texts to {ADVISOR_MODEL} (cap {cap} = "
+          f"{ADVISOR_MAX_FRACTION:.0%} of {window} texts completed since {since:.0f})")
     if not rows:
         return 0
     client = anthropic.Anthropic(max_retries=3)
@@ -279,9 +307,10 @@ def run_advisor(con, run):
     return changed
 
 
-def ensure_scope(con, limit, seed):
-    """Mark in-scope distinct texts. Default: all. With --limit, a deterministic seeded sample
-    (ordered by sha256(seed|text_key)) so reruns pick the same texts."""
+def ensure_scope(con, limit, seed, target_ids=None):
+    """Mark in-scope distinct texts. Default: all. With limit, the first N texts of a seeded shuffle.
+    With target_ids, golden-50 texts are always included, then seeded-order texts are added until
+    the in-scope texts cover at least target_ids source review IDs (exact-text reuse counts)."""
     con.executescript(RESULTS_SCHEMA)
     cols = [r[1] for r in con.execute("PRAGMA table_info(texts)")]
     if "in_scope" not in cols:
@@ -293,6 +322,24 @@ def ensure_scope(con, limit, seed):
         con.executemany("UPDATE texts SET scope_order=? WHERE text_key=?", [(i, k) for i, k in enumerate(keys)])
     if limit is not None:
         con.execute("UPDATE texts SET in_scope = CASE WHEN scope_order < ? THEN 1 ELSE 0 END", (limit,))
+    if target_ids is not None:
+        from pipeline.contract import csv_rows
+        golden = [r["review_id"] for r in csv_rows(GOLDEN_CSV)]
+        forced = {k for (k,) in con.execute(
+            f"SELECT text_key FROM reviews WHERE text_key IS NOT NULL AND review_id IN ({','.join('?' * len(golden))})",
+            golden)}
+        chosen, covered = set(forced), 0
+        n_rows = dict(con.execute("SELECT text_key, n_rows FROM texts"))
+        covered = sum(n_rows[k] for k in forced)
+        for (k,) in con.execute("SELECT text_key FROM texts ORDER BY scope_order"):
+            if covered >= target_ids:
+                break
+            if k not in chosen:
+                chosen.add(k)
+                covered += n_rows[k]
+        con.execute("UPDATE texts SET in_scope = 0")
+        con.executemany("UPDATE texts SET in_scope = 1 WHERE text_key = ?", [(k,) for k in chosen])
+        print(f"[scope] {len(chosen)} distinct texts (incl. {len(forced)} golden) cover {covered} review IDs")
     con.commit()
 
 

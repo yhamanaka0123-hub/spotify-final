@@ -1,0 +1,21 @@
+{
+  "_note": "Editable projection assumptions. Measured pilot results are never changed by these values.",
+  "budget_usd": 10.0,
+  "output_token_cap_per_request": {"jev": "n/a (fixed choices)", "verify": 2400, "advisor": 4200, "group": 1500, "memo": 3000},
+  "max_workers": 4,
+  "jev_max_requests_per_second": 18,
+  "advisor_max_fraction": 0.01,
+  "scenarios": {
+    "chosen_scope_100k_ids": {"rows": 660622, "nonempty": 660609, "quarantined_empty": 13, "texts_to_classify": 66079,
+                              "ids_covered": 100000, "verify_sample": 1000},
+    "full_with_exact_text_reuse": {"rows": 660622, "nonempty": 660609, "quarantined_empty": 13,
+                                   "texts_to_classify": 484189, "ids_covered": 660609, "verify_sample": 2000},
+    "full_without_reuse": {"rows": 660622, "nonempty": 660609, "quarantined_empty": 13,
+                           "texts_to_classify": 660609, "ids_covered": 660609, "verify_sample": 2000}
+  },
+  "cases": {
+    "base": {"retry_rate": 0.02, "advisor_fraction": 0.01, "throughput_factor": 1.0},
+    "conservative": {"retry_rate": 0.10, "advisor_fraction": 0.03, "throughput_factor": 0.6}
+  },
+  "local_compute": {"description": "Laptop CPU for SQLite/Python (WSL2). Not metered.", "cost_usd": "unknown"}
+}

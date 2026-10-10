@@ -25,7 +25,9 @@ def main():
     ap.add_argument("--verify-sample", type=int, default=20)
     ap.add_argument("--workers", type=int, default=1)
     ap.add_argument("--limit-texts", type=int)
+    ap.add_argument("--target-ids", type=int, help="scope: cover at least N review IDs (golden 50 always included)")
     ap.add_argument("--fresh", action="store_true", help="re-ingest (empty result cache)")
+    ap.add_argument("--stop-after", type=int, help="dispatch at most N enrichment texts, then stop")
     ap.add_argument("--phase", choices=["initial", "resume"], default="initial")
     args = ap.parse_args()
 
@@ -41,14 +43,16 @@ def main():
     stages["prepare"] = round(time.time() - t, 3)
 
     con = sqlite3.connect(args.db)
-    enrich.ensure_scope(con, args.limit_texts, "a5-scope-v1")
+    enrich.ensure_scope(con, args.limit_texts, "a5-scope-v1", args.target_ids)
     status = "completed"
     try:
         t = time.time()
-        done, failed, _ = enrich.run_jev(con, run, args.workers, None)
+        done, failed, _ = enrich.run_jev(con, run, args.workers, args.stop_after)
         stages["enrich_jev"] = round(time.time() - t, 3)
         t = time.time()
-        advised = enrich.run_advisor(con, run)
+        advised = enrich.run_advisor(con, run, since=t0)
+        if args.stop_after is not None:
+            raise SystemExit(f"[run] stopped after {args.stop_after} texts + advisor (interruption demo)")
         stages["enrich_advisor"] = round(time.time() - t, 3)
         t = time.time()
         vpath = args.run_dir / "verify_report.json"

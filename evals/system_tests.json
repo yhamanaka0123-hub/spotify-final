@@ -1,0 +1,27 @@
+{
+  "planted_error": {
+    "planted": 10,
+    "caught": 10,
+    "pass": true
+  },
+  "malformed_output": {
+    "cases": {
+      "bad_topic": "rejected: bad topic 'music'",
+      "bad_intent": "rejected: bad intent 'angry'",
+      "bad_severity": "rejected: bad severity 7",
+      "bad_sentiment": "rejected: bad sentiment -3",
+      "quote_not_in_source": "rejected: evidence_quote is not an exact substring"
+    },
+    "pass": true
+  },
+  "temporary_api_failure": {
+    "attempts_logged": 2,
+    "all_logged_failed": true,
+    "outcome": "raised after bounded retry: failed after retry: simulated temporary API failure",
+    "pass": true
+  },
+  "budget_stop": {
+    "pass": true,
+    "outcome": "refused before dispatch: spent $0.0000 + reserved $0.0001 + next $0.0001 > budget $0.00"
+  }
+}

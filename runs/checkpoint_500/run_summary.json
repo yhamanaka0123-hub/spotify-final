@@ -1,0 +1,38 @@
+{
+  "input": "data/checkpoint_500.csv",
+  "db": "work/cp500.db",
+  "status": "completed",
+  "fresh": true,
+  "label_config": "jev-1.13.0+jevq-v1+schema-v1+advisor:claude-sonnet-5-5@0.5",
+  "workers": 2,
+  "phase": "initial",
+  "wall_seconds": 67.116,
+  "stage_seconds": {
+    "prepare": 0.062,
+    "enrich_jev": 37.53,
+    "enrich_advisor": 5.191,
+    "verify": 11.003,
+    "group_rank_memo_export": 13.278
+  },
+  "new_calls": 484,
+  "new_calls_by_role": {
+    "enrich": 480,
+    "verify": 2,
+    "group": 1,
+    "memo": 1
+  },
+  "new_failed_calls": 0,
+  "new_cost_usd": 0.057457,
+  "jev_completed": 479,
+  "jev_failed": 0,
+  "advisor_relabelled": 3,
+  "counts": {
+    "source_rows": 500,
+    "completed": 500,
+    "quarantined": 0,
+    "cache_reused_ids": 21,
+    "needs_review": 61,
+    "quarantine_reasons": {}
+  },
+  "memo_problems": []
+}

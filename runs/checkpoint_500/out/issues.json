@@ -1,0 +1,33 @@
+{
+  "input_sha256": "6f72ec14953b049501f413ae0a258aa6c1fcb27c3dcfe189885b11ce72875be4",
+  "issues": {
+    "ISS-access": {
+      "name": "Login and account access failures",
+      "summary": "Users repeatedly cannot log in or access their accounts, facing password rejections, false no-connection errors, forced logouts, and hacked accounts."
+    },
+    "ISS-billing": {
+      "name": "Premium paywall blocks core features",
+      "summary": "Users report being unable to purchase or use premium subscriptions, with free users restricted from skipping or selecting songs and features like Canvas locked behind payment."
+    },
+    "ISS-catalog": {
+      "name": "Missing songs and lyrics",
+      "summary": "Users find songs absent from the catalog, receive only 30-second clips, or see lyrics that fail to load, along with unwanted recommendations appearing in playlists."
+    },
+    "ISS-downloads": {
+      "name": "Offline downloads disappearing or failing",
+      "summary": "Offline mode and downloaded content stop working, downloads get stuck or vanish, and users cannot download music without paying."
+    },
+    "ISS-other": {
+      "name": "General dissatisfaction after updates",
+      "summary": "Users express broad dissatisfaction, citing missing features and restrictions introduced in recent updates, with several saying they plan to uninstall."
+    },
+    "ISS-playback": {
+      "name": "Playback failures and app crashes",
+      "summary": "Songs fail to play, the app crashes or freezes after updates, and playback does not work over mobile data or on certain devices."
+    },
+    "ISS-usability": {
+      "name": "Confusing navigation and playback controls",
+      "summary": "Users struggle with navigation, such as liked songs not displaying, tapped songs playing different tracks, and restrictions on choosing songs within playlists."
+    }
+  }
+}

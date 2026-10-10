@@ -1,0 +1,271 @@
+{
+  "verify_config": "claude-haiku-5-5+verify-v1+schema-v1",
+  "enrich_config": "jev-1.13.0+jevq-v1+schema-v1+advisor:claude-sonnet-5-5@0.5",
+  "sampled": 50,
+  "verified": 50,
+  "agreement": {
+    "topic": 0.88,
+    "intent": 0.9,
+    "severity": 0.86
+  },
+  "disagreements": [
+    {
+      "review_id": "1340bd5d-35eb-4434-84b2-0ce9ca7dc9be",
+      "text": "Love that Spotify let's you listen while your screen is off! the hottest playlists available for browsing so if your not sure what you wanna hear no worries, Spotify's got you! I strongly recommend this app to anyone that has to have their fav music in their chill zone!",
+      "enrich": {
+        "topic": "playback",
+        "intent": "praise",
+        "severity": 1
+      },
+      "verify": {
+        "topic": "other",
+        "intent": "praise",
+        "severity": 1
+      },
+      "disagree": [
+        "topic"
+      ]
+    },
+    {
+      "review_id": "bc1c4825-00c5-458d-ac00-098ce729c76d",
+      "text": "Best app ever... GET PRENIUM ITS WORTH TRUST!!! uuhhh yeah thats abt it!!! love spotify... m eyah",
+      "enrich": {
+        "topic": "other",
+        "intent": "praise",
+        "severity": 1
+      },
+      "verify": {
+        "topic": "billing",
+        "intent": "praise",
+        "severity": 1
+      },
+      "disagree": [
+        "topic"
+      ]
+    },
+    {
+      "review_id": "3e8bdc92-4934-457e-85cc-8b9d14bf51c0",
+      "text": "Decent,just let me have a solid 4-5 songs without an ad bro, it's always every 1 or 2 song then instant ads, that's all thanks",
+      "enrich": {
+        "topic": "usability",
+        "intent": "complaint",
+        "severity": 3
+      },
+      "verify": {
+        "topic": "usability",
+        "intent": "complaint",
+        "severity": 2
+      },
+      "disagree": [
+        "severity"
+      ]
+    },
+    {
+      "review_id": "86adc9b6-be58-400c-9a08-aa082ff0535c",
+      "text": "Very bad experience ever faced by any app. They are literally forcing us to purchase Spotify premium.",
+      "enrich": {
+        "topic": "billing",
+        "intent": "complaint",
+        "severity": 3
+      },
+      "verify": {
+        "topic": "billing",
+        "intent": "complaint",
+        "severity": 2
+      },
+      "disagree": [
+        "severity"
+      ]
+    },
+    {
+      "review_id": "618d1dbb-0186-4537-923a-7b4dabf19afb",
+      "text": "Please stop with the recommendations! I use the premium family sub and I want to listen to my playlist without your recommendation adds. I am not interested in new music based on my preferences. If I wanted these songs I'd use a random playlist not not make my own! I'll start using Amazon music or apple if you don't.",
+      "enrich": {
+        "topic": "catalog",
+        "intent": "cancellation",
+        "severity": 3
+      },
+      "verify": {
+        "topic": "usability",
+        "intent": "complaint",
+        "severity": 2
+      },
+      "disagree": [
+        "topic",
+        "intent",
+        "severity"
+      ]
+    },
+    {
+      "review_id": "56f6a4a1-7aa3-4e61-a361-0f1f7c754fac",
+      "text": "Love Vern gosdin.",
+      "enrich": {
+        "topic": "other",
+        "intent": "praise",
+        "severity": 1
+      },
+      "verify": {
+        "topic": "other",
+        "intent": "unclear",
+        "severity": 1
+      },
+      "disagree": [
+        "intent"
+      ]
+    },
+    {
+      "review_id": "0a5ff524-27b1-4f3b-a761-17ca48ee731d",
+      "text": "Best app for listening music",
+      "enrich": {
+        "topic": "other",
+        "intent": "request",
+        "severity": 1
+      },
+      "verify": {
+        "topic": "other",
+        "intent": "praise",
+        "severity": 1
+      },
+      "disagree": [
+        "intent"
+      ]
+    },
+    {
+      "review_id": "9f7a013a-082e-4ec1-8a65-a1e0a0395d20",
+      "text": "Nice app but why can't the lyrics of song on my playlist load?",
+      "enrich": {
+        "topic": "catalog",
+        "intent": "complaint",
+        "severity": 3
+      },
+      "verify": {
+        "topic": "catalog",
+        "intent": "complaint",
+        "severity": 2
+      },
+      "disagree": [
+        "severity"
+      ]
+    },
+    {
+      "review_id": "cc7b79ef-bf37-40fc-a02e-4917b86e422c",
+      "text": "Worst music app I have ever seen, this is not music app, this is advertisement app... Bakwaas wahiyaad irritating app",
+      "enrich": {
+        "topic": "usability",
+        "intent": "complaint",
+        "severity": 3
+      },
+      "verify": {
+        "topic": "usability",
+        "intent": "complaint",
+        "severity": 2
+      },
+      "disagree": [
+        "severity"
+      ]
+    },
+    {
+      "review_id": "f1c0acd2-8eaf-421c-8143-9908a9a527fc",
+      "text": "🔥🔥🔥🔥🔥",
+      "enrich": {
+        "topic": "other",
+        "intent": "unclear",
+        "severity": 1
+      },
+      "verify": {
+        "topic": "other",
+        "intent": "praise",
+        "severity": 1
+      },
+      "disagree": [
+        "intent"
+      ]
+    },
+    {
+      "review_id": "00363dc8-2117-4565-9af9-efadf8fa90cf",
+      "text": "Worst",
+      "enrich": {
+        "topic": "other",
+        "intent": "complaint",
+        "severity": 1
+      },
+      "verify": {
+        "topic": "other",
+        "intent": "complaint",
+        "severity": 2
+      },
+      "disagree": [
+        "severity"
+      ]
+    },
+    {
+      "review_id": "1807cc68-ba99-4edc-b6f1-2a1478e69109",
+      "text": "I love Spotify recommendations music type before more than now. It was more songs and updated to newest song.",
+      "enrich": {
+        "topic": "catalog",
+        "intent": "complaint",
+        "severity": 2
+      },
+      "verify": {
+        "topic": "catalog",
+        "intent": "praise",
+        "severity": 1
+      },
+      "disagree": [
+        "intent",
+        "severity"
+      ]
+    },
+    {
+      "review_id": "d218ffde-42f9-48f8-a793-832507454b35",
+      "text": "Some of the song lyrics couldn't load, even if I updated it and refresh the app. Additionally, some songs are not showing huhu. Also, the song keeps on shuffling .. I can't find the shuffle button to stop it. Once you click the button, it just keep on playing the other song.",
+      "enrich": {
+        "topic": "usability",
+        "intent": "complaint",
+        "severity": 3
+      },
+      "verify": {
+        "topic": "catalog",
+        "intent": "complaint",
+        "severity": 3
+      },
+      "disagree": [
+        "topic"
+      ]
+    },
+    {
+      "review_id": "d27e9b26-a7af-469c-9a4e-8deea2db72ae",
+      "text": "Great place for music. Bad for smaller artists and a platform for idiots like Joe Rogan and Steven Crowder to spread their stupidity.",
+      "enrich": {
+        "topic": "other",
+        "intent": "complaint",
+        "severity": 2
+      },
+      "verify": {
+        "topic": "catalog",
+        "intent": "complaint",
+        "severity": 2
+      },
+      "disagree": [
+        "topic"
+      ]
+    },
+    {
+      "review_id": "0cc5a3be-e40c-4e9f-918d-53d284e2e5b3",
+      "text": "When there is no adds its Awesome",
+      "enrich": {
+        "topic": "other",
+        "intent": "praise",
+        "severity": 1
+      },
+      "verify": {
+        "topic": "usability",
+        "intent": "praise",
+        "severity": 1
+      },
+      "disagree": [
+        "topic"
+      ]
+    }
+  ]
+}
