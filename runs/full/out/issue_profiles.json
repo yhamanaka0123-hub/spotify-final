@@ -1,0 +1,154 @@
+{
+  "ISS-access": {
+    "members": 1360,
+    "severity_counts": {
+      "1": 9,
+      "2": 24,
+      "3": 66,
+      "4": 1219,
+      "5": 42
+    },
+    "cancellation_intent": 67,
+    "top_entities": {
+      "login": 959,
+      "ads": 189,
+      "premium": 145,
+      "update": 95,
+      "playlist": 74,
+      "download": 49
+    }
+  },
+  "ISS-billing": {
+    "members": 6370,
+    "severity_counts": {
+      "1": 344,
+      "2": 1503,
+      "3": 3875,
+      "4": 502,
+      "5": 146
+    },
+    "cancellation_intent": 977,
+    "top_entities": {
+      "premium": 4279,
+      "update": 1375,
+      "ads": 1244,
+      "subscription": 577,
+      "shuffle": 368,
+      "playlist": 346
+    }
+  },
+  "ISS-catalog": {
+    "members": 1837,
+    "severity_counts": {
+      "1": 104,
+      "2": 455,
+      "3": 932,
+      "4": 343,
+      "5": 3
+    },
+    "cancellation_intent": 96,
+    "top_entities": {
+      "lyrics": 625,
+      "ads": 306,
+      "search": 188,
+      "update": 171,
+      "premium": 127,
+      "playlist": 123
+    }
+  },
+  "ISS-downloads": {
+    "members": 933,
+    "severity_counts": {
+      "1": 57,
+      "2": 55,
+      "3": 365,
+      "4": 436,
+      "5": 20
+    },
+    "cancellation_intent": 41,
+    "top_entities": {
+      "download": 682,
+      "ads": 541,
+      "offline": 267,
+      "premium": 146,
+      "playlist": 116,
+      "update": 65
+    }
+  },
+  "ISS-other": {
+    "members": 11864,
+    "severity_counts": {
+      "1": 1205,
+      "2": 10277,
+      "3": 168,
+      "4": 155,
+      "5": 59
+    },
+    "cancellation_intent": 779,
+    "top_entities": {
+      "update": 2449,
+      "ads": 1319,
+      "download": 154,
+      "premium": 109,
+      "recommendations": 54,
+      "support": 30
+    }
+  },
+  "ISS-playback": {
+    "members": 5396,
+    "severity_counts": {
+      "1": 45,
+      "2": 315,
+      "3": 2335,
+      "4": 2691,
+      "5": 10
+    },
+    "cancellation_intent": 368,
+    "top_entities": {
+      "update": 954,
+      "ads": 947,
+      "playlist": 570,
+      "premium": 514,
+      "crash": 493,
+      "download": 290
+    }
+  },
+  "ISS-support": {
+    "members": 98,
+    "severity_counts": {
+      "1": 5,
+      "2": 48,
+      "3": 26,
+      "4": 11,
+      "5": 8
+    },
+    "cancellation_intent": 14,
+    "top_entities": {
+      "support": 54,
+      "ads": 24,
+      "premium": 15,
+      "update": 9,
+      "subscription": 7,
+      "podcast": 4
+    }
+  },
+  "ISS-usability": {
+    "members": 11680,
+    "severity_counts": {
+      "1": 174,
+      "2": 2018,
+      "3": 8368,
+      "4": 1109,
+      "5": 11
+    },
+    "cancellation_intent": 913,
+    "top_entities": {
+      "ads": 5276,
+      "playlist": 2138,
+      "update": 1830,
+      "premium": 1429,
+      "shuffle": 1218,
+      "podcast": 359
+    }
+  }
+}

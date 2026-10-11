@@ -1,37 +1,37 @@
 {
-  "input_sha256": "c195507a5b678d2b037aa617e07ec525ac5b7d0777dc18fada9d7c9ada3716bf",
+  "input_sha256": "a77b6e776fe942fbc83a9873b9ca63fe564a28848fa1cf518b6cbaf6e61182f7",
   "issues": {
     "ISS-access": {
-      "name": "Account hacked and lockouts",
-      "summary": "Users report their accounts being hacked, emails changed, devices connected without consent, and being unable to log in or recover playlists."
+      "name": "Login and account access failures",
+      "summary": "Most reviews complain that users cannot log in, get logged out repeatedly, or cannot create or recover accounts."
     },
     "ISS-billing": {
-      "name": "Unwanted charges after cancellation",
-      "summary": "Users are charged after cancelling or on free plans, get double-debited, or have auto-renewal payments continue without consent."
+      "name": "Free tier locked behind Premium",
+      "summary": "Most reviews complain that core features like playing specific songs, queuing, and playlists now require a Premium subscription, prompting cancellation threats."
     },
     "ISS-catalog": {
       "name": "Missing songs and lyrics",
-      "summary": "Users find songs, albums, and lyrics missing or not loading, and liked-songs content disappearing from the catalog."
+      "summary": "Most reviews complain that certain songs, albums, or lyrics are unavailable, missing, or not displaying correctly."
     },
     "ISS-downloads": {
-      "name": "Downloaded music keeps disappearing",
-      "summary": "Users say their offline downloads and library are deleted or re-downloaded at lower quality, often after updates or payment issues."
+      "name": "Offline downloads not working",
+      "summary": "Most reviews complain that downloaded music or podcasts will not play offline or that users cannot download content at all."
     },
     "ISS-other": {
-      "name": "Security, trust, and data concerns",
-      "summary": "Users describe the app as corrupt, fraudulent, or unsafe, citing manipulated data, unauthorized device connections, and privacy worries about background sound collection."
+      "name": "General dissatisfaction with updates",
+      "summary": "Most reviews complain in broad, unspecific terms that recent updates have made the app worse and express general frustration."
     },
     "ISS-playback": {
-      "name": "Excessive mobile data usage",
-      "summary": "Users report the app consuming mobile data in the background or through previews despite data-saving settings being enabled."
+      "name": "Playback stopping and crashing",
+      "summary": "Most reviews complain that music or podcasts stutter, cut out, pause unexpectedly, or the app crashes during playback."
     },
     "ISS-support": {
       "name": "Poor customer support responses",
-      "summary": "Users find customer service unresponsive or unhelpful, especially for hacked accounts, double withdrawals, and billing disputes."
+      "summary": "Most reviews complain that customer support is slow, unhelpful, or hard to reach when problems occur."
     },
     "ISS-usability": {
-      "name": "Liked songs deleted and poor recommendations",
-      "summary": "Users say their liked songs and playlists vanish without explanation, and that recommendations ignore their selections, mood, or disabled settings."
+      "name": "Intrusive ads and cluttered interface",
+      "summary": "Most reviews complain about frequent ads, especially for free users and Premium subscribers, along with a cluttered or confusing interface after updates."
     }
   }
 }
