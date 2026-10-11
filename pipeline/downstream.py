@@ -20,8 +20,8 @@ from pipeline.llm import claude_json
 
 GROUP_MODEL = "claude-haiku-5-5"
 MEMO_MODEL = "claude-sonnet-5-5"
-GROUP_CONFIG = f"{GROUP_MODEL}+group-v2"
-MEMO_CONFIG = f"{MEMO_MODEL}+memo-v2"
+GROUP_CONFIG = f"{GROUP_MODEL}+group-v3"
+MEMO_CONFIG = f"{MEMO_MODEL}+memo-v3"
 EVIDENCE_PER_ISSUE = 12
 
 
@@ -80,9 +80,23 @@ def evidence_pack(records, members, per_issue=EVIDENCE_PER_ISSUE):
     return out
 
 
-def issue_profiles(records, members):
-    """Code-computed issue profile: size, severity distribution and the most frequent explicit feature terms."""
+# Word-boundary feature terms for issue profiles. The record-level `entities` field (labels.entities_for, part of
+# the frozen label_config) uses plain substring matching and over-matches ("bad" -> ad, "downloads" -> ads); that
+# known error is measured in evals/golden_report.json and is NOT used for any memo number.
+PROFILE_TERMS = {
+    "ads": r"\b(ads?|advert\w*|commercials?)\b", "premium": r"\bpremium\b", "shuffle": r"\bshuffl\w*",
+    "lyrics": r"\blyric\w*", "offline": r"\boffline\b", "download": r"\bdownload\w*", "playlist": r"\bplaylists?\b",
+    "queue": r"\bqueue\w*", "login": r"\b(log ?in|sign ?in|password)\b", "update": r"\bupdat\w*",
+    "podcast": r"\bpodcasts?\b", "crash": r"\bcrash\w*", "price": r"\b(price\w*|expensive|cost\w*)\b",
+    "skip": r"\bskip\w*", "subscription": r"\bsubscri\w*",
+}
+
+
+def issue_profiles(records, members, texts=None):
+    """Code-computed issue profile: size, severity distribution and the most frequent explicit feature terms
+    (word-boundary matches on the review text)."""
     by_id = {r["review_id"]: r for r in records}
+    compiled = {k: re.compile(v, re.I) for k, v in PROFILE_TERMS.items()}
     prof = defaultdict(lambda: {"n": 0, "severity": defaultdict(int), "entities": defaultdict(int),
                                 "cancellation": 0})
     for issue, rid in members:
@@ -90,8 +104,10 @@ def issue_profiles(records, members):
         p["n"] += 1
         p["severity"][r["severity"]] += 1
         p["cancellation"] += r["intent"] == "cancellation"
-        for e in r["entities"]:
-            p["entities"][e] += 1
+        text = (texts or {}).get(rid, "")
+        for name, rx in compiled.items():
+            if rx.search(text):
+                p["entities"][name] += 1
     return {k: {"members": v["n"], "severity_counts": dict(sorted(v["severity"].items())),
                 "cancellation_intent": v["cancellation"],
                 "top_entities": dict(sorted(v["entities"].items(), key=lambda kv: -kv[1])[:6])}
@@ -252,7 +268,8 @@ def run_downstream(con, run, out_dir, *, with_models=True):
     result = {"counts": counts, "ranking": ranking}
     if not with_models:
         return result
-    profiles = issue_profiles(records, members)
+    texts = dict(con.execute("SELECT review_id, review_text FROM reviews WHERE text_key IS NOT NULL"))
+    profiles = issue_profiles(records, members, texts)
     (out / "issue_profiles.json").write_text(json.dumps(profiles, indent=2) + "\n", encoding="utf-8")
     issues = name_issues(run, pack, out / "issues.json", profiles)
     context = {"run_counts": counts, "ranking": ranking, "claims": claim_rows, "issues": issues,

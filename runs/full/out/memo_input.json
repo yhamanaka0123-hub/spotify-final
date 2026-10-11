@@ -273,35 +273,35 @@
   "issues": {
     "ISS-access": {
       "name": "Login and account access failures",
-      "summary": "Most reviews complain that users cannot log in, get logged out repeatedly, or cannot create or recover accounts."
+      "summary": "Most reviews complain that users cannot log in, get logged out repeatedly, or cannot create or recover accounts, even after reinstalling the app."
     },
     "ISS-billing": {
-      "name": "Free tier locked behind Premium",
-      "summary": "Most reviews complain that core features like playing specific songs, queuing, and playlists now require a Premium subscription, prompting cancellation threats."
+      "name": "Forced premium paywall for features",
+      "summary": "Most reviews complain that core features like skipping, shuffle, and song selection are locked behind premium, and that ads and subscription pressure have increased."
     },
     "ISS-catalog": {
       "name": "Missing songs and lyrics",
-      "summary": "Most reviews complain that certain songs, albums, or lyrics are unavailable, missing, or not displaying correctly."
+      "summary": "Most reviews complain that certain songs, albums, or lyrics are unavailable or missing from the catalog, and that recommendations are poor."
     },
     "ISS-downloads": {
       "name": "Offline downloads not working",
-      "summary": "Most reviews complain that downloaded music or podcasts will not play offline or that users cannot download content at all."
+      "summary": "Most reviews complain that downloaded music, podcasts, or playlists fail to play offline or cannot be downloaded at all."
     },
     "ISS-other": {
       "name": "General dissatisfaction with updates",
-      "summary": "Most reviews complain in broad, unspecific terms that recent updates have made the app worse and express general frustration."
+      "summary": "Most reviews are short, general complaints that the app has gotten worse with each update, with no specific feature named."
     },
     "ISS-playback": {
-      "name": "Playback stopping and crashing",
-      "summary": "Most reviews complain that music or podcasts stutter, cut out, pause unexpectedly, or the app crashes during playback."
+      "name": "Playback stops, stutters, or crashes",
+      "summary": "Most reviews complain that songs or podcasts cut out, stutter, or stop playing, and that the app crashes during playback."
     },
     "ISS-support": {
       "name": "Poor customer support responses",
-      "summary": "Most reviews complain that customer support is slow, unhelpful, or hard to reach when problems occur."
+      "summary": "Most reviews complain that customer support is slow, unhelpful, or unresponsive when users report problems."
     },
     "ISS-usability": {
-      "name": "Intrusive ads and cluttered interface",
-      "summary": "Most reviews complain about frequent ads, especially for free users and Premium subscribers, along with a cluttered or confusing interface after updates."
+      "name": "Ads and cluttered new interface",
+      "summary": "Most reviews complain that frequent ads and the redesigned interface make it hard to shuffle, queue, and find playlists and podcasts."
     }
   },
   "issue_profiles": {
@@ -316,12 +316,12 @@
       },
       "cancellation_intent": 67,
       "top_entities": {
-        "login": 959,
-        "ads": 189,
+        "login": 922,
         "premium": 145,
-        "update": 95,
+        "update": 102,
         "playlist": 74,
-        "download": 49
+        "download": 45,
+        "subscription": 37
       }
     },
     "ISS-billing": {
@@ -335,12 +335,12 @@
       },
       "cancellation_intent": 977,
       "top_entities": {
-        "premium": 4279,
-        "update": 1375,
-        "ads": 1244,
-        "subscription": 577,
-        "shuffle": 368,
-        "playlist": 346
+        "premium": 4262,
+        "update": 1396,
+        "subscription": 569,
+        "ads": 567,
+        "skip": 465,
+        "shuffle": 389
       }
     },
     "ISS-catalog": {
@@ -355,11 +355,11 @@
       "cancellation_intent": 96,
       "top_entities": {
         "lyrics": 625,
-        "ads": 306,
-        "search": 188,
-        "update": 171,
+        "update": 178,
         "premium": 127,
-        "playlist": 123
+        "playlist": 121,
+        "podcast": 67,
+        "ads": 65
       }
     },
     "ISS-downloads": {
@@ -373,12 +373,12 @@
       },
       "cancellation_intent": 41,
       "top_entities": {
-        "download": 682,
-        "ads": 541,
+        "download": 670,
         "offline": 267,
         "premium": 146,
         "playlist": 116,
-        "update": 65
+        "update": 72,
+        "podcast": 50
       }
     },
     "ISS-other": {
@@ -392,12 +392,12 @@
       },
       "cancellation_intent": 779,
       "top_entities": {
-        "update": 2449,
-        "ads": 1319,
+        "update": 2498,
         "download": 154,
-        "premium": 109,
-        "recommendations": 54,
-        "support": 30
+        "premium": 108,
+        "podcast": 23,
+        "subscription": 18,
+        "ads": 14
       }
     },
     "ISS-playback": {
@@ -411,12 +411,12 @@
       },
       "cancellation_intent": 368,
       "top_entities": {
-        "update": 954,
-        "ads": 947,
-        "playlist": 570,
+        "update": 979,
+        "playlist": 568,
         "premium": 514,
         "crash": 493,
-        "download": 290
+        "download": 280,
+        "podcast": 275
       }
     },
     "ISS-support": {
@@ -430,12 +430,12 @@
       },
       "cancellation_intent": 14,
       "top_entities": {
-        "support": 54,
-        "ads": 24,
         "premium": 15,
         "update": 9,
-        "subscription": 7,
-        "podcast": 4
+        "subscription": 6,
+        "podcast": 4,
+        "download": 3,
+        "price": 3
       }
     },
     "ISS-usability": {
@@ -449,12 +449,12 @@
       },
       "cancellation_intent": 913,
       "top_entities": {
-        "ads": 5276,
+        "ads": 4430,
         "playlist": 2138,
-        "update": 1830,
-        "premium": 1429,
-        "shuffle": 1218,
-        "podcast": 359
+        "update": 1863,
+        "premium": 1421,
+        "shuffle": 1259,
+        "skip": 937
       }
     }
   },

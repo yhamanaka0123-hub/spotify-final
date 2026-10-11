@@ -10,12 +10,12 @@
     },
     "cancellation_intent": 67,
     "top_entities": {
-      "login": 959,
-      "ads": 189,
+      "login": 922,
       "premium": 145,
-      "update": 95,
+      "update": 102,
       "playlist": 74,
-      "download": 49
+      "download": 45,
+      "subscription": 37
     }
   },
   "ISS-billing": {
@@ -29,12 +29,12 @@
     },
     "cancellation_intent": 977,
     "top_entities": {
-      "premium": 4279,
-      "update": 1375,
-      "ads": 1244,
-      "subscription": 577,
-      "shuffle": 368,
-      "playlist": 346
+      "premium": 4262,
+      "update": 1396,
+      "subscription": 569,
+      "ads": 567,
+      "skip": 465,
+      "shuffle": 389
     }
   },
   "ISS-catalog": {
@@ -49,11 +49,11 @@
     "cancellation_intent": 96,
     "top_entities": {
       "lyrics": 625,
-      "ads": 306,
-      "search": 188,
-      "update": 171,
+      "update": 178,
       "premium": 127,
-      "playlist": 123
+      "playlist": 121,
+      "podcast": 67,
+      "ads": 65
     }
   },
   "ISS-downloads": {
@@ -67,12 +67,12 @@
     },
     "cancellation_intent": 41,
     "top_entities": {
-      "download": 682,
-      "ads": 541,
+      "download": 670,
       "offline": 267,
       "premium": 146,
       "playlist": 116,
-      "update": 65
+      "update": 72,
+      "podcast": 50
     }
   },
   "ISS-other": {
@@ -86,12 +86,12 @@
     },
     "cancellation_intent": 779,
     "top_entities": {
-      "update": 2449,
-      "ads": 1319,
+      "update": 2498,
       "download": 154,
-      "premium": 109,
-      "recommendations": 54,
-      "support": 30
+      "premium": 108,
+      "podcast": 23,
+      "subscription": 18,
+      "ads": 14
     }
   },
   "ISS-playback": {
@@ -105,12 +105,12 @@
     },
     "cancellation_intent": 368,
     "top_entities": {
-      "update": 954,
-      "ads": 947,
-      "playlist": 570,
+      "update": 979,
+      "playlist": 568,
       "premium": 514,
       "crash": 493,
-      "download": 290
+      "download": 280,
+      "podcast": 275
     }
   },
   "ISS-support": {
@@ -124,12 +124,12 @@
     },
     "cancellation_intent": 14,
     "top_entities": {
-      "support": 54,
-      "ads": 24,
       "premium": 15,
       "update": 9,
-      "subscription": 7,
-      "podcast": 4
+      "subscription": 6,
+      "podcast": 4,
+      "download": 3,
+      "price": 3
     }
   },
   "ISS-usability": {
@@ -143,12 +143,12 @@
     },
     "cancellation_intent": 913,
     "top_entities": {
-      "ads": 5276,
+      "ads": 4430,
       "playlist": 2138,
-      "update": 1830,
-      "premium": 1429,
-      "shuffle": 1218,
-      "podcast": 359
+      "update": 1863,
+      "premium": 1421,
+      "shuffle": 1259,
+      "skip": 937
     }
   }
 }

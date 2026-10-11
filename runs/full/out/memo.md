@@ -1,30 +1,25 @@
 ## Recommendation
-
-Prioritize **ISS-usability (Intrusive ads and cluttered interface)** next quarter. It ranks #1 on priority score (33,805 [C-usability-priority_score]), ahead of ISS-other (23,178 [C-other-priority_score]) and ISS-playback (18,494 [C-playback-priority_score]).
+Prioritize **ISS-usability (Ads and cluttered new interface)** for the next quarter. It ranks #1 on priority score (33,805 [C-usability-priority_score]).
 
 ## Why (supporting numbers)
-
-- Usability has 11,680 complaints [C-usability-complaint_count] and a severity sum of 33,805 [C-usability-severity_sum], with mean severity 2.894264 [C-usability-mean_severity].
-- Issue profile (computed over all members): ads are mentioned in 5,276 of 11,680 members, shuffle in 1,218, playlist in 2,138, update in 1,830. Severity 3 (degraded but usable) dominates with 8,368 members. Cancellation intent: 913 members (stated intent, not observed churn).
-- ISS-other has slightly more complaints (11,864 [C-other-complaint_count]) but low mean severity (1.953641 [C-other-mean_severity]) and is generic dissatisfaction, so it is not actionable as a single workstream.
-- Evidence themes: ads for Premium users and frequent ads, update-driven layout changes, and shuffle/queue trouble.
+- Usability has 11,680 complaints [C-usability-complaint_count] with severity sum 33,805 [C-usability-severity_sum] and mean severity 2.894264 [C-usability-mean_severity].
+- Runner-up ISS-other (general dissatisfaction with updates) has 11,864 complaints [C-other-complaint_count] but mean severity 1.953641 [C-other-mean_severity] and priority 23,178 [C-other-priority_score]. It names no specific feature, so it is not actionable.
+- Issue profile (computed over all members): usability has 913 cancellation-intent reviews of 11,680 members; top entities are ads (4,430), playlist (2,138), update (1,863), premium (1,421), shuffle (1,259). Cancellation language is stated intent, not observed churn.
+- Most usability reviews are severity 3 (8,368, a degraded but workable function), so this is broad friction rather than blocked tasks.
 
 ## Alternatives considered
-
-- **ISS-playback**: highest severity among the large issues (mean 3.427354 [C-playback-mean_severity]) with 5,396 complaints [C-playback-complaint_count]. It is the strongest second priority, since many reviews describe a core task being blocked (crashes, stopping). Profile: 2,691 members at severity 4.
-- **ISS-billing (free tier locked behind Premium)**: 6,370 complaints [C-billing-complaint_count], priority 17,713 [C-billing-priority_score]. Overlaps with ads and monetization, so it is partly a product/business-model decision. Profile cancellation intent is 977 members.
-- **ISS-access**: small volume (1,360 [C-access-complaint_count]) but the highest mean severity (3.927206 [C-access-mean_severity]); login failures block use entirely. This is a good targeted fix candidate despite its lower rank (priority 5,341 [C-access-priority_score]).
-- Catalog, downloads, and support rank lower (support: 98 complaints [C-support-complaint_count]).
+- **ISS-playback**: priority 18,494 [C-playback-priority_score], 5,396 complaints [C-playback-complaint_count], and higher mean severity 3.427354 [C-playback-mean_severity]. Strong second choice, especially for crashes (493 mentions in profile).
+- **ISS-billing (premium paywall)**: priority 17,713 [C-billing-priority_score], 6,370 complaints [C-billing-complaint_count]. This is largely a business-model decision rather than a defect, and it overlaps with ads in usability.
+- **ISS-access (login failures)**: only 1,360 complaints [C-access-complaint_count], but the highest mean severity, 3.927206 [C-access-mean_severity], with priority 5,341 [C-access-priority_score]. It is a good targeted fix, since 1,219 of its members are severity 4 (blocked core task).
+- Catalog, downloads and support rank lower (priority 5,197 [C-catalog-priority_score], 3,106 [C-downloads-priority_score], 263 [C-support-priority_score]).
 
 ## Representative reviews (IDs)
-
-- Usability: 77239751-6d0b-4cf5-b257-dc0cb3189f01 (ads in podcasts for a Premium user), e7f02fbb-798f-4b9a-944e-78024741a031 (cannot shuffle after update), 8fc9a390-71cc-4bbd-9a17-cb16b53afeb3 (cannot queue; cancellation intent).
-- Playback: b75f0bf4-e31e-43f2-b2c8-e257275af9d3, 47bc8218-5a9c-4cf2-8337-cf09383c3e21.
-- Access: 407f1d76-79c7-4f7a-a017-846cf9244b62.
+- Usability: 8fc9a390-71cc-4bbd-9a17-cb16b53afeb3 (cannot queue after update), e7f02fbb-798f-4b9a-944e-78024741a031 (cannot figure out shuffle), ef33243f-f4a6-45b2-9155-9ccf104ed059 (increasing ads), a5561e77-296c-4a55-a478-6d310756dbb4 (podcast and downloads path).
+- Playback: 47bc8218-5a9c-4cf2-8337-cf09383c3e21 (crash during play).
+- Access: 407f1d76-79c7-4f7a-a017-846cf9244b62 (cannot log in since update).
 
 ## Limitations
-
-- Run coverage: 100,000 reviews completed; 560,609 rows were quarantined as not_classified_outside_budget_scope (never classified, not failures) and 13 as empty_review_text. 12,532 were flagged needs_review (run_counts).
-- Priority score equals severity sum, so it favors volume; it does not measure revenue or churn impact.
-- Evidence quotes are a random sample; ISS-usability and ISS-billing overlap on ads and Premium themes, and classification is single-label.
-- Cancellation language is stated intent only.
+- Run coverage (run_counts): 100,000 reviews completed; 12,532 flagged needs_review; 560,609 rows quarantined as not_classified_outside_budget_scope (never classified, not failures) and 13 as empty_review_text. Results reflect a seeded random sample of distinct texts.
+- Priority score is severity sum, so it favors volume; the ranking would change if severity were weighted more heavily (playback or access).
+- Evidence quotes are a random sample per issue. Several usability and billing reviews mention both ads and premium, so categories overlap.
+- No revenue, churn or causal data is available; this memo makes no such claims.

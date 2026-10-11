@@ -61,6 +61,44 @@ def collect():
     shutil.copy(RUNS["cold"] / "out" / "records.jsonl", HERE / "pilot_records.jsonl")
 
 
+def refresh_section(rates, budget):
+    """Estimate refreshes at the 500 and 10,000 checkpoints, plus the measured full run (all offline from saved logs)."""
+    def load(path):
+        return [json.loads(l) for l in open(path, encoding="utf-8")] if path.exists() else []
+
+    def priced(c):
+        if c["input_tokens"] is None:
+            return 0.0
+        return c["input_tokens"] * rates[(c["model"], "input_tokens")] + (c["output_tokens"] or 0) * rates[(c["model"], "output_tokens")]
+
+    rows = []
+    cp = load(ROOT / "runs" / "checkpoint_500" / "calls.jsonl")
+    s500 = json.loads((ROOT / "runs" / "checkpoint_500" / "run_summary.json").read_text())
+    full = load(ROOT / "grading" / "calls.jsonl")
+    initial = [c for c in full if c["phase"] == "initial" and c["role"] == "enrich" and not c.get("advisor")]
+    for name, calls, secs, workers in (
+            ("checkpoint_500 (2 workers)", cp, s500["stage_seconds"]["enrich_jev"], 2),
+            ("first 10,000 texts of the full run (4 workers)", initial,
+             max(c["started_at"] + c["duration_s"] for c in initial) - min(c["started_at"] for c in initial), 4)):
+        jev = [c for c in calls if c["role"] == "enrich" and not c.get("advisor")]
+        ok = [c for c in jev if c["outcome"] == "succeeded"]
+        per_text = sum(priced(c) for c in ok) / max(1, len(ok))
+        rps = len(jev) / max(1e-9, secs)
+        n = 66079
+        rows.append((name, len(ok), per_text, rps, n * per_text, n / rps / 3600))
+    out = ["", "## Estimate refreshes at 500 and 10,000 (measured, offline)", "",
+           "| Checkpoint | Jev texts | Jev $/text | Texts/s | Projected Jev cost, 66,079 texts | Projected hours |",
+           "|---|---|---|---|---|---|"]
+    for name, n, pt, rps, cost, hours in rows:
+        out.append(f"| {name} | {n:,} | {money(pt)} | {rps:.1f} | {money(cost)} | {hours:.2f} |")
+    if full:
+        total = sum(priced(c) for c in full)
+        out += ["", f"**Measured full run** (`grading/calls.jsonl`, {len(full):,} attempts, "
+                    f"{sum(c['outcome'] == 'failed' for c in full)} failed): **{money(total)}** at these rates. "
+                    f"Budget ${budget:.2f}: {'within' if total <= budget else 'OVER'}."]
+    return out
+
+
 def money(x):
     if x is None:
         return "unknown"
@@ -208,6 +246,7 @@ def main():
              "60% throughput. The output-token cap per request, maximum workers and the advisor cap are set in "
              "`cost/assumptions.json` and enforced in `pipeline/enrich.py` (spend reservations, rate limiter, "
              "circuit breaker).\n")
+    L.extend(refresh_section(rates, budget))
     (HERE / "report.md").write_text("\n".join(L) + "\n", encoding="utf-8")
     print("\n".join(L))
 

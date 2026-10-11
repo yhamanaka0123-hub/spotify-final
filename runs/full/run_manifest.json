@@ -1,0 +1,79 @@
+{
+  "run_id": "full-2026-10-10",
+  "written_at": "2026-10-11T11:16:36-0700",
+  "code_version": "88bb2da29976ca65918ee85d052097e5d9a2c814",
+  "source": {
+    "file": "data/spotify_reviews_18months.csv",
+    "sha256": "1fc85de68a304dd8978b537cfa58793d5f41cbaf417fa32cb53899f83a2fcef6",
+    "rows": 660622
+  },
+  "scope": {
+    "method": "seeded shuffle of distinct texts (seed a5-scope-v1) + all golden-50 texts, until 100,000 IDs",
+    "distinct_texts": 66079,
+    "review_ids": 100000
+  },
+  "roles": {
+    "enrich": {
+      "model": "jev-1.13.0",
+      "prompt_version": "jevq-v1",
+      "schema": "schema-v1",
+      "batch": "1 text per request",
+      "workers": 4,
+      "max_rps": 18,
+      "questions": "pipeline/labels.py"
+    },
+    "advisor": {
+      "model": "claude-sonnet-5-5",
+      "effort": "low",
+      "threshold": 0.5,
+      "max_fraction": 0.01,
+      "batch": 20,
+      "prompt": "pipeline/enrich.py ADVISOR_SYSTEM"
+    },
+    "verify": {
+      "model": "claude-haiku-5-5",
+      "config": "claude-haiku-5-5+verify-v1+schema-v1",
+      "thinking": "disabled",
+      "effort": "low",
+      "sample": 1000,
+      "batch": 25,
+      "prompt": "pipeline/verify.py SYSTEM"
+    },
+    "group": {
+      "model": "claude-haiku-5-5",
+      "config": "claude-haiku-5-5+group-v3",
+      "thinking": "disabled"
+    },
+    "memo": {
+      "model": "claude-sonnet-5-5",
+      "config": "claude-sonnet-5-5+memo-v3",
+      "effort": "low",
+      "prompt": "pipeline/downstream.py MEMO_SYSTEM"
+    }
+  },
+  "label_config": "jev-1.13.0+jevq-v1+schema-v1+advisor:claude-sonnet-5-5@0.5",
+  "budget_usd": 5.0,
+  "outputs_sha256": {
+    "grading/calls.jsonl": "92a8873d7e4d4f5cdd9d16ad6f5de5d5ee38a31a107f1caf442addc4e2b55dbb",
+    "grading/checkpoint_after.json": "1282207f7a46756f14561d3163d28207541b267f423b18720b1b964207a552fa",
+    "grading/checkpoint_before.json": "4944977515b001eee34ec37390c28944c5fc34dcd144c4260e7cfa67e54a16c7",
+    "grading/claims.csv": "367038359645e124e200c8172d2d4d444abf3b01da424a09f4ba19324e60217a",
+    "grading/ingestion.json": "5512dd793b0bde3bd51f28b20b440108f3c9bab31233819bea5f32ce19482153",
+    "grading/membership.csv": "ef2f4026f565f910aeaf8250066302921506b5edea9cbec841817af4e8871517",
+    "grading/ranking.csv": "61dd377cae87222f28e3f4271b521f4938e4a2ec8a2d3878f08e0da8de0fb73b",
+    "grading/records.jsonl.gz": "0b40bbda5ef4ff7275953c17b7c28578a52933a2bf1a8add264caabb9e01952f",
+    "grading/run.json": "0877a01a2307897375956ab4a5b352f6b7e329a053f93e45e9e823fe93ff8e24",
+    "runs/full/out/claims.csv": "367038359645e124e200c8172d2d4d444abf3b01da424a09f4ba19324e60217a",
+    "runs/full/out/evidence_pack.json": "a05d27fb9dfa4266654355f2a0d3f8074a48a8c01db462c326096297427e8f4a",
+    "runs/full/out/issue_profiles.json": "185c26baf1befd23fddd04d5afb2a15f044cba8bb103b9a2cbb5e7ed8b4746e4",
+    "runs/full/out/issues.json": "b58c4c0ab015bd36c764e77f9713413f4d4f70b42edcd804b88af74792508ebf",
+    "runs/full/out/membership.csv": "ef2f4026f565f910aeaf8250066302921506b5edea9cbec841817af4e8871517",
+    "runs/full/out/memo.json": "d2e5dedd0531c4b92ec94bd65b07c91900fa8a974c1c2533487c08e077ba725c",
+    "runs/full/out/memo.md": "7d1f63572b2a531c6c6c33e178cc860995bf8819dae9fb7580cebdfcfac5ad72",
+    "runs/full/out/memo_check.json": "5ba10ab8931e485829645d26ae85b58af97593717f1ea67711a2c587ae695dcc",
+    "runs/full/out/memo_input.json": "3ef5428b137aaefd4d27aeb200e707ec6779e4ea3349dd5e00553747f7494887",
+    "runs/full/out/ranking.csv": "61dd377cae87222f28e3f4271b521f4938e4a2ec8a2d3878f08e0da8de0fb73b",
+    "runs/full/verify_report.json": "a737d74fe4e202cb810b300b10cbbe1ca723f6cb8d4fe84fb2f7c8660462cba7",
+    "runs/full/run_summary.json": "2dc5b86a9a1dacdc201d958081a1900768328e49d96956e84601fd89c25e8da5"
+  }
+}

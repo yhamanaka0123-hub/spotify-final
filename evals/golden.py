@@ -16,6 +16,9 @@ from pathlib import Path
 from openpyxl import load_workbook
 
 from pipeline.contract import INTENTS, TOPICS
+import re
+
+from pipeline.downstream import PROFILE_TERMS
 from pipeline.enrich import LABEL_CONFIG
 
 HERE = Path(__file__).resolve().parent
@@ -55,9 +58,11 @@ def main():
     human = read_human(args.xlsx)
     missing = [h["review_id"] for h in human if not (h["topic"] and h["intent"] and h["severity"])]
     con = sqlite3.connect(args.db)
-    pred = {rid: dict(zip(("topic", "intent", "severity", "sentiment", "evidence_quote", "needs_review", "decided_by"), rest))
+    pred = {rid: dict(zip(("topic", "intent", "severity", "sentiment", "evidence_quote", "needs_review", "decided_by",
+                           "entities"), rest))
             for rid, *rest in con.execute("""
-        SELECT rv.review_id, r.topic, r.intent, r.severity, r.sentiment, r.evidence_quote, r.needs_review, r.decided_by
+        SELECT rv.review_id, r.topic, r.intent, r.severity, r.sentiment, r.evidence_quote, r.needs_review, r.decided_by,
+               r.entities
         FROM reviews rv JOIN results r ON r.text_key = rv.text_key AND r.label_config = ?""", (LABEL_CONFIG,))}
 
     with open(HERE / "golden_labels.csv", "w", newline="", encoding="utf-8") as f:
@@ -87,6 +92,13 @@ def main():
             agree["sentiment_within_tol"] += d <= SENTIMENT_TOLERANCE
         agree["quote_is_substring"] += p["evidence_quote"] in h["review_text"]
         agree["needs_review"] += bool(p["needs_review"]) == h["needs_review"]
+        # Entity inspection: an entity is unsupported if its word-boundary term does not occur in the text.
+        ents = json.loads(p["entities"]) if isinstance(p["entities"], str) else p["entities"]
+        unsupported = [e for e in ents if e in PROFILE_TERMS and not re.search(PROFILE_TERMS[e], h["review_text"], re.I)]
+        case["entities"], case["unsupported_entities"] = ents, unsupported
+        agree["records_with_unsupported_entity"] += bool(unsupported)
+        agree["records_with_entities"] += bool(ents)
+        agree["quote_is_full_text"] += p["evidence_quote"] == h["review_text"]
         conf_topic[(h["topic"], p["topic"])] += 1
         conf_intent[(h["intent"], p["intent"])] += 1
         case["disagree"] = [f for f in ("topic", "intent", "severity") if p[f] != h[f]]
@@ -111,6 +123,9 @@ def main():
                       f"sentiment_within_{SENTIMENT_TOLERANCE}": round(agree["sentiment_within_tol"] / max(1, len(sent_abs)), 4),
                       "quote_is_exact_substring": round(agree["quote_is_substring"] / n, 4),
                       "needs_review_match": round(agree["needs_review"] / n, 4),
+                      "quote_is_full_text": agree["quote_is_full_text"],
+                      "records_with_entities": agree["records_with_entities"],
+                      "records_with_unsupported_entity": agree["records_with_unsupported_entity"],
                       "topic_macro_f1": macro_f1(conf_topic, TOPICS), "intent_macro_f1": macro_f1(conf_intent, INTENTS)},
         "human_flagged_ambiguous": sum(h["needs_review"] for h in human),
         "per_topic_counts": {"human": Counter(h["topic"] for h in human), "pred": Counter(

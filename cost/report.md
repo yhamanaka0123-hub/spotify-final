@@ -58,3 +58,12 @@ Every scenario accounts for all 660,622 rows: 13 empty texts are quarantined (`e
 
 Cases: base = 2% retries, 1% advisor fallback; conservative = 10% retries, 3% advisor fallback, 60% throughput. The output-token cap per request, maximum workers and the advisor cap are set in `cost/assumptions.json` and enforced in `pipeline/enrich.py` (spend reservations, rate limiter, circuit breaker).
 
+
+## Estimate refreshes at 500 and 10,000 (measured, offline)
+
+| Checkpoint | Jev texts | Jev $/text | Texts/s | Projected Jev cost, 66,079 texts | Projected hours |
+|---|---|---|---|---|---|
+| checkpoint_500 (2 workers) | 479 | $0.0000479 | 12.8 | $3.1626 | 1.44 |
+| first 10,000 texts of the full run (4 workers) | 10,000 | $0.0000480 | 17.7 | $3.1713 | 1.04 |
+
+**Measured full run** (`grading/calls.jsonl`, 66,176 attempts, 8 failed): **$4.0745** at these rates. Budget $10.00: within.

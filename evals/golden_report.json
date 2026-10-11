@@ -11,6 +11,9 @@
     "sentiment_within_0.5": 0.82,
     "quote_is_exact_substring": 1.0,
     "needs_review_match": 0.86,
+    "quote_is_full_text": 46,
+    "records_with_entities": 21,
+    "records_with_unsupported_entity": 4,
     "topic_macro_f1": 0.5901,
     "intent_macro_f1": 0.8558
   },
@@ -70,9 +73,16 @@
         "sentiment": -1.0,
         "evidence_quote": "Spotify is doing all they can to protect pedophiles, by banning Christian songs discussing the path the devil leads you down.",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[\"ads\"]"
       },
       "note": "severityが判断しづらい。実際にキリスト教系の曲がbanされているなら3とも読みうるかも",
+      "entities": [
+        "ads"
+      ],
+      "unsupported_entities": [
+        "ads"
+      ],
       "disagree": []
     },
     {
@@ -92,9 +102,12 @@
         "sentiment": 0.99,
         "evidence_quote": "Great app use it every chance I get",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[]"
       },
       "note": "",
+      "entities": [],
+      "unsupported_entities": [],
       "disagree": []
     },
     {
@@ -114,9 +127,12 @@
         "sentiment": 1.0,
         "evidence_quote": "It's really an amazing experience with Spotify...I love it🥰",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[]"
       },
       "note": "",
+      "entities": [],
+      "unsupported_entities": [],
       "disagree": []
     },
     {
@@ -136,9 +152,14 @@
         "sentiment": -0.395,
         "evidence_quote": "Ads were okay, but limited functionality..it's just too much",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[\"ads\"]"
       },
       "note": "",
+      "entities": [
+        "ads"
+      ],
+      "unsupported_entities": [],
       "disagree": []
     },
     {
@@ -158,9 +179,12 @@
         "sentiment": 0.99,
         "evidence_quote": "I just loved it",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[]"
       },
       "note": "",
+      "entities": [],
+      "unsupported_entities": [],
       "disagree": []
     },
     {
@@ -180,9 +204,12 @@
         "sentiment": -1.0,
         "evidence_quote": "Hate this application 🤮🤮🤮🤮🤮🤮",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[]"
       },
       "note": "【定義との整合チェック後に本人が承認して修正（AI予測は未参照）】 intent: unclear→complaint, severity: 1→2",
+      "entities": [],
+      "unsupported_entities": [],
       "disagree": []
     },
     {
@@ -202,9 +229,12 @@
         "sentiment": 0.99,
         "evidence_quote": "Excellent",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[]"
       },
       "note": "",
+      "entities": [],
+      "unsupported_entities": [],
       "disagree": []
     },
     {
@@ -224,9 +254,12 @@
         "sentiment": 0.9,
         "evidence_quote": "good ❤❤🔊🔊",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[]"
       },
       "note": "",
+      "entities": [],
+      "unsupported_entities": [],
       "disagree": []
     },
     {
@@ -246,9 +279,12 @@
         "sentiment": 0.99,
         "evidence_quote": "Spotify is awesome and and very diverse :)",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[]"
       },
       "note": "",
+      "entities": [],
+      "unsupported_entities": [],
       "disagree": []
     },
     {
@@ -268,9 +304,15 @@
         "sentiment": 0.765,
         "evidence_quote": "Duo Premium .... No ads at all!",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[\"ads\", \"premium\"]"
       },
       "note": "【定義との整合チェック後に本人が承認して修正（AI予測は未参照）】 sentiment: -1→1",
+      "entities": [
+        "ads",
+        "premium"
+      ],
+      "unsupported_entities": [],
       "disagree": []
     },
     {
@@ -290,9 +332,14 @@
         "sentiment": -0.295,
         "evidence_quote": "Very good but wen I play my song it o ly plays a little bit then it stops I updated my phone and it worked but it happend again they need to fix this issue",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[\"update\"]"
       },
       "note": "",
+      "entities": [
+        "update"
+      ],
+      "unsupported_entities": [],
       "disagree": []
     },
     {
@@ -312,9 +359,16 @@
         "sentiment": 0.045,
         "evidence_quote": "I tried to open it today, and it keeps crashing every time.",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[\"crash\", \"support\", \"update\"]"
       },
       "note": "Old postは不満だけど、Update版は称賛。Update版が最新の状況という理解で、いったんUpdate版のコメントを重くとって評価",
+      "entities": [
+        "crash",
+        "support",
+        "update"
+      ],
+      "unsupported_entities": [],
       "disagree": [
         "topic",
         "severity"
@@ -337,9 +391,16 @@
         "sentiment": -0.84,
         "evidence_quote": "This app is bad work",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[\"ads\"]"
       },
       "note": "",
+      "entities": [
+        "ads"
+      ],
+      "unsupported_entities": [
+        "ads"
+      ],
       "disagree": [
         "topic"
       ]
@@ -361,9 +422,12 @@
         "sentiment": 0.21,
         "evidence_quote": "Great...",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[]"
       },
       "note": "",
+      "entities": [],
+      "unsupported_entities": [],
       "disagree": [
         "intent"
       ]
@@ -385,9 +449,12 @@
         "sentiment": 0.915,
         "evidence_quote": "Super",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[]"
       },
       "note": "",
+      "entities": [],
+      "unsupported_entities": [],
       "disagree": []
     },
     {
@@ -407,9 +474,14 @@
         "sentiment": 0.0,
         "evidence_quote": "I like it but god I hate it when the music Interrupts my ads",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[\"ads\"]"
       },
       "note": "",
+      "entities": [
+        "ads"
+      ],
+      "unsupported_entities": [],
       "disagree": [
         "severity"
       ]
@@ -431,9 +503,12 @@
         "sentiment": -0.13,
         "evidence_quote": "Lhat ng song nasa spotify",
         "needs_review": 1,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[]"
       },
       "note": "",
+      "entities": [],
+      "unsupported_entities": [],
       "disagree": [
         "topic",
         "intent"
@@ -456,9 +531,12 @@
         "sentiment": 0.03,
         "evidence_quote": "Avtar sungh",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[]"
       },
       "note": "",
+      "entities": [],
+      "unsupported_entities": [],
       "disagree": []
     },
     {
@@ -478,9 +556,12 @@
         "sentiment": -0.435,
         "evidence_quote": "asem, lirik nya kdang gaada kek mana??",
         "needs_review": 1,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[]"
       },
       "note": "",
+      "entities": [],
+      "unsupported_entities": [],
       "disagree": [
         "severity"
       ]
@@ -502,9 +583,12 @@
         "sentiment": -0.985,
         "evidence_quote": "Hate This application 👎",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[]"
       },
       "note": "【定義との整合チェック後に本人が承認して修正（AI予測は未参照）】 intent: unclear→complaint",
+      "entities": [],
+      "unsupported_entities": [],
       "disagree": []
     },
     {
@@ -524,9 +608,12 @@
         "sentiment": -0.955,
         "evidence_quote": "We are boycotting Swedish app in our protest against Sweden for their desrecpect & desceration of our holy book Qur'an",
         "needs_review": 1,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[]"
       },
       "note": "",
+      "entities": [],
+      "unsupported_entities": [],
       "disagree": [
         "severity"
       ]
@@ -548,9 +635,15 @@
         "sentiment": 1.0,
         "evidence_quote": "I LOVE that I was able to put in only a few songs I like and Spotify gave me recommendations for an AWESOME Playlist...!!!",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[\"playlist\", \"recommendations\"]"
       },
       "note": "",
+      "entities": [
+        "playlist",
+        "recommendations"
+      ],
+      "unsupported_entities": [],
       "disagree": [
         "topic"
       ]
@@ -572,9 +665,12 @@
         "sentiment": 1.0,
         "evidence_quote": "I absolutely love Spotify, to me is one of the best Music Apps. Great job Spotify!!!",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[]"
       },
       "note": "",
+      "entities": [],
+      "unsupported_entities": [],
       "disagree": []
     },
     {
@@ -594,9 +690,14 @@
         "sentiment": -0.51,
         "evidence_quote": "Please ye ads ko thoda kumm Karo harr ek song ke baad ad 🙏🙄",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[\"ads\"]"
       },
       "note": "",
+      "entities": [
+        "ads"
+      ],
+      "unsupported_entities": [],
       "disagree": [
         "severity"
       ]
@@ -618,9 +719,17 @@
         "sentiment": -0.995,
         "evidence_quote": "Very poor updates as we cannot playback the songs and most bad updates are happening it is affecting the spotify quality",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[\"ads\", \"update\"]"
       },
       "note": "",
+      "entities": [
+        "ads",
+        "update"
+      ],
+      "unsupported_entities": [
+        "ads"
+      ],
       "disagree": []
     },
     {
@@ -640,9 +749,12 @@
         "sentiment": 0.985,
         "evidence_quote": "Awesomeness 👌 👏 👍 😍 💖",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[]"
       },
       "note": "",
+      "entities": [],
+      "unsupported_entities": [],
       "disagree": []
     },
     {
@@ -662,9 +774,12 @@
         "sentiment": -0.02,
         "evidence_quote": "Bheekhmangon",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[]"
       },
       "note": "",
+      "entities": [],
+      "unsupported_entities": [],
       "disagree": []
     },
     {
@@ -684,9 +799,12 @@
         "sentiment": 0.765,
         "evidence_quote": "Unconditional love, Stoli Canales",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[]"
       },
       "note": "",
+      "entities": [],
+      "unsupported_entities": [],
       "disagree": [
         "intent"
       ]
@@ -708,9 +826,17 @@
         "sentiment": -0.995,
         "evidence_quote": "The new update suck, we can't choose our fvrt songs after some clicks, we can't CHOOSE song after a song played, and we can't turn off shuffle option.",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[\"premium\", \"shuffle\", \"subscription\", \"update\"]"
       },
       "note": "",
+      "entities": [
+        "premium",
+        "shuffle",
+        "subscription",
+        "update"
+      ],
+      "unsupported_entities": [],
       "disagree": [
         "topic"
       ]
@@ -732,9 +858,14 @@
         "sentiment": -0.485,
         "evidence_quote": "It's my best music app but now it's not...everything basic features is premium....",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[\"premium\"]"
       },
       "note": "",
+      "entities": [
+        "premium"
+      ],
+      "unsupported_entities": [],
       "disagree": []
     },
     {
@@ -754,9 +885,12 @@
         "sentiment": -0.88,
         "evidence_quote": "I hate this app and sweden .I love islam",
         "needs_review": 1,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[]"
       },
       "note": "",
+      "entities": [],
+      "unsupported_entities": [],
       "disagree": [
         "intent",
         "severity"
@@ -779,9 +913,12 @@
         "sentiment": -0.965,
         "evidence_quote": "Recently I'm trying to play a song but it doesn't working.",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[]"
       },
       "note": "",
+      "entities": [],
+      "unsupported_entities": [],
       "disagree": []
     },
     {
@@ -801,9 +938,14 @@
         "sentiment": -1.0,
         "evidence_quote": "Are you out of your mind? This is dangerous! Listening to music in a normal volume and suddenly an add starts and my ears feel like they explode!! Stop this BS, or you're gonna destroy someones ears.",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[\"volume\"]"
       },
       "note": "",
+      "entities": [
+        "volume"
+      ],
+      "unsupported_entities": [],
       "disagree": [
         "topic",
         "severity"
@@ -826,9 +968,12 @@
         "sentiment": -0.25,
         "evidence_quote": "Beth, we all got to give me a free dollar to go with 3 months, bro I can't be like",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[]"
       },
       "note": "【定義との整合チェック後に本人が承認して修正（AI予測は未参照）】 severity: 1→2",
+      "entities": [],
+      "unsupported_entities": [],
       "disagree": [
         "intent",
         "severity"
@@ -851,9 +996,12 @@
         "sentiment": 0.525,
         "evidence_quote": "Good",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[]"
       },
       "note": "",
+      "entities": [],
+      "unsupported_entities": [],
       "disagree": []
     },
     {
@@ -873,9 +1021,12 @@
         "sentiment": 0.81,
         "evidence_quote": "Good app!",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[]"
       },
       "note": "",
+      "entities": [],
+      "unsupported_entities": [],
       "disagree": []
     },
     {
@@ -895,9 +1046,14 @@
         "sentiment": 0.645,
         "evidence_quote": "Nice app, very less advertising",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[\"ads\"]"
       },
       "note": "",
+      "entities": [
+        "ads"
+      ],
+      "unsupported_entities": [],
       "disagree": [
         "topic"
       ]
@@ -919,9 +1075,15 @@
         "sentiment": -0.995,
         "evidence_quote": "1-Lyrics not getting loaded, 2-can't go back to or start song where to wanted. Pathetic update",
         "needs_review": 1,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[\"lyrics\", \"update\"]"
       },
       "note": "",
+      "entities": [
+        "lyrics",
+        "update"
+      ],
+      "unsupported_entities": [],
       "disagree": [
         "topic",
         "severity"
@@ -944,9 +1106,12 @@
         "sentiment": 0.975,
         "evidence_quote": "Phenomenal",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[]"
       },
       "note": "",
+      "entities": [],
+      "unsupported_entities": [],
       "disagree": []
     },
     {
@@ -966,9 +1131,12 @@
         "sentiment": 0.525,
         "evidence_quote": "Good",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[]"
       },
       "note": "",
+      "entities": [],
+      "unsupported_entities": [],
       "disagree": []
     },
     {
@@ -988,9 +1156,12 @@
         "sentiment": 0.135,
         "evidence_quote": "The only thing Spotify lacks is the ability to organize saved \nalbums/artists into collections. Would definitely deserve 5 stars if it \nincluded this feature.",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[]"
       },
       "note": "【定義との整合チェック後に本人が承認して修正（AI予測は未参照）】 severity: 3→1",
+      "entities": [],
+      "unsupported_entities": [],
       "disagree": [
         "topic"
       ]
@@ -1012,9 +1183,12 @@
         "sentiment": -0.995,
         "evidence_quote": "Worst application 👎👎👎",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[]"
       },
       "note": "【定義との整合チェック後に本人が承認して修正（AI予測は未参照）】 intent: unclear→complaint, severity: 1→2",
+      "entities": [],
+      "unsupported_entities": [],
       "disagree": []
     },
     {
@@ -1034,9 +1208,14 @@
         "sentiment": -0.965,
         "evidence_quote": "I gave one star because I can't give any less than that. the new update is sooooooo annoying like I can't even play the songs that I like and I can't rewind songs what the heck",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[\"update\"]"
       },
       "note": "",
+      "entities": [
+        "update"
+      ],
+      "unsupported_entities": [],
       "disagree": [
         "severity"
       ]
@@ -1058,9 +1237,14 @@
         "sentiment": 0.99,
         "evidence_quote": "I find Spotify very good, it finds and play whatever music you want and also adds songs that you might like, judging from your playlist if you choose to arrange one. 😊💃🎸🎶",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[\"playlist\"]"
       },
       "note": "",
+      "entities": [
+        "playlist"
+      ],
+      "unsupported_entities": [],
       "disagree": [
         "topic"
       ]
@@ -1082,9 +1266,15 @@
         "sentiment": -0.655,
         "evidence_quote": "paying for subscribing but unable to play in offline mode really?",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[\"offline\", \"subscription\"]"
       },
       "note": "",
+      "entities": [
+        "offline",
+        "subscription"
+      ],
+      "unsupported_entities": [],
       "disagree": [
         "severity"
       ]
@@ -1106,9 +1296,14 @@
         "sentiment": -0.99,
         "evidence_quote": "Worst app ever too much ad",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[\"ads\"]"
       },
       "note": "【定義との整合チェック後に本人が承認して修正（AI予測は未参照）】 severity: 1→2",
+      "entities": [
+        "ads"
+      ],
+      "unsupported_entities": [],
       "disagree": [
         "severity"
       ]
@@ -1130,9 +1325,15 @@
         "sentiment": -0.985,
         "evidence_quote": "Too expensive and the free version is pretty much unusable with constant ads... Every two or three songs.. Forget it",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[\"ads\", \"price\"]"
       },
       "note": "",
+      "entities": [
+        "ads",
+        "price"
+      ],
+      "unsupported_entities": [],
       "disagree": [
         "topic"
       ]
@@ -1154,9 +1355,17 @@
         "sentiment": -0.96,
         "evidence_quote": "This update very bad for everyone.old Spotify. we all want.",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[\"ads\", \"update\"]"
       },
       "note": "【定義との整合チェック後に本人が承認して修正（AI予測は未参照）】 intent: unclear→complaint, severity: 1→2",
+      "entities": [
+        "ads",
+        "update"
+      ],
+      "unsupported_entities": [
+        "ads"
+      ],
       "disagree": []
     },
     {
@@ -1176,9 +1385,12 @@
         "sentiment": 0.97,
         "evidence_quote": "I'm loving the experience with the app",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[]"
       },
       "note": "",
+      "entities": [],
+      "unsupported_entities": [],
       "disagree": []
     },
     {
@@ -1198,9 +1410,12 @@
         "sentiment": 0.995,
         "evidence_quote": "best app ever",
         "needs_review": 0,
-        "decided_by": "jev"
+        "decided_by": "jev",
+        "entities": "[]"
       },
       "note": "",
+      "entities": [],
+      "unsupported_entities": [],
       "disagree": []
     }
   ]

@@ -17,18 +17,18 @@ The pipeline is a multi-agent chain coordinated by code. **TypeSafe Jev** classi
 | Independent verifier | 999 sampled texts. Agreement with the enrichment labels: topic **86.2%**, intent **92.2%**, severity **80.6%** ([verify_report.json](runs/full/verify_report.json)) |
 | Golden 50 (human) | topic **78%**, intent **90%**, severity exact **76%** (MAE 0.28), sentiment MAE 0.24 ([details](#evaluation)) |
 | System tests | planted errors caught 10/10, prompt-injection cases 3/3, malformed output rejected 5/5, API-failure retry and budget stop pass ([system_tests.json](evals/system_tests.json)) |
-| Full-run API cost (measured) | **$4.04** in total: Jev $3.17, Sonnet advisor $0.74, Sonnet memo $0.05, Haiku verify $0.04, Haiku group $0.001. Development runs added ≈ $0.10 (pilot $0.035, 500 checkpoint $0.057). |
+| Full-run API cost (measured) | **$4.07** in total: Jev $3.17, Sonnet advisor $0.74, Sonnet memo $0.12, Haiku verify $0.04, Haiku group $0.004. The memo and group numbers include two documented re-generations, v1 → v3, see [Limitations](#limitations). Development runs added ≈ $0.10 (pilot $0.035, 500 checkpoint $0.057). The calculator's refreshed estimates at 500 and 10,000 texts projected $3.16–3.17 for Jev, and Jev actually cost $3.17 ([cost/report.md](cost/report.md)). |
 | Full-run time | ≈ 10 min initial phase + 66 min resume (4 workers, ≈ 17 Jev texts/s). Cold pilot on 100 reviews: 38.8 s, $0.035. Warm rerun: 0 new calls, 1.9 s. |
 | Self-check | `check_submission.py check` → `review_required` with only `unfinished_classification` (the out-of-scope rows) and `invalid_usage` (8 failed attempts whose usage is unknown). Coverage-point candidate is 0.4908. |
 
-**Recommendation (from the [memo](runs/full/out/memo.md)):** prioritize **ISS-usability, "Intrusive ads and cluttered interface"**. It has priority 33,805 (11,680 complaints × mean severity 2.894264), and ads are mentioned in 5,276 of its members. **ISS-playback, "Playback stopping and crashing"** is the strongest second: mean severity 3.43, 2,691 members at severity 4. **ISS-access** (login failures) is a small, targeted fix: 1,360 complaints at the highest mean severity of 3.93.
+**Recommendation (from the [memo](runs/full/out/memo.md)):** prioritize **ISS-usability, "Ads and cluttered new interface"**. It has priority 33,805 (11,680 complaints × mean severity 2.894264). Ads are mentioned in 4,430 of its members, counted by word-boundary matching in [issue_profiles.json](runs/full/out/issue_profiles.json). **ISS-playback, "Playback stops, stutters, or crashes"** is the strongest second: mean severity 3.43, 2,691 members at severity 4. **ISS-access** (login failures) is a small, targeted fix: 1,360 complaints at the highest mean severity of 3.93.
 
 | Rank | Issue | Complaints | Mean severity | Priority |
 |---|---|---|---|---|
-| 1 | ISS-usability: Intrusive ads and cluttered interface | 11,680 | 2.894264 | 33,805 |
+| 1 | ISS-usability: Ads and cluttered new interface | 11,680 | 2.894264 | 33,805 |
 | 2 | ISS-other: General dissatisfaction with updates | 11,864 | 1.953641 | 23,178 |
-| 3 | ISS-playback: Playback stopping and crashing | 5,396 | 3.427354 | 18,494 |
-| 4 | ISS-billing: Free tier locked behind Premium | 6,370 | 2.780691 | 17,713 |
+| 3 | ISS-playback: Playback stops, stutters, or crashes | 5,396 | 3.427354 | 18,494 |
+| 4 | ISS-billing: Forced premium paywall for features | 6,370 | 2.780691 | 17,713 |
 | 5 | ISS-access: Login and account access failures | 1,360 | 3.927206 | 5,341 |
 | 6 | ISS-catalog: Missing songs and lyrics | 1,837 | 2.829069 | 5,197 |
 | 7 | ISS-downloads: Offline downloads not working | 933 | 3.329046 | 3,106 |
@@ -43,7 +43,7 @@ Review `8fc9a390-71cc-4bbd-9a17-cb16b53afeb3`: *"The new update sucks and I'm no
 3. **Verify:** this review was not in the seeded 1,000-text sample. Verification is sample-based, and its results are in `verify_report.json`.
 4. **Group:** it is a member of `ISS-usability` in [membership.csv](grading/membership.csv), because the intent is cancellation and the topic is usability.
 5. **Rank:** it contributes 1 to `complaint_count` and 4 to `severity_sum` of ISS-usability, which ranks #1 at 33,805.
-6. **Memo:** it is cited as a representative usability review ("cannot queue; cancellation intent"), next to the claims `[C-usability-priority_score]` and others that `memo_check.json` verified.
+6. **Memo:** it is cited as a representative usability review ("cannot queue after update"), next to the claims `[C-usability-priority_score]` and others that `memo_check.json` verified.
 
 **Ambiguous case and its handling:** golden review `723f07de…` begins "Update: I reached out to Spotify Support… able to get the app working again. Old Post: … keeps crashing". Jev chose playback/complaint/4. The human chose support/complaint/1 and flagged it `needs_review`, because the update resolves the crash. The rubric does not say whether an edited review's latest state overrides the original complaint, so the case is recorded as an ambiguous disagreement rather than "fixed" in the prompt.
 <!-- RESULTS:END -->
@@ -61,7 +61,7 @@ Review `8fc9a390-71cc-4bbd-9a17-cb16b53afeb3`: *"The new update sucks and I'm no
 | **T3** Real 100-review cold/warm pilot, offline calculator, retry/spend/recovery controls | [cost/report.md](cost/report.md), [cost/calculator.py](cost/calculator.py), [Controls](#retry-spending-and-recovery-controls) |
 | **W1** Full ingestion, record coverage, classification | [grading/ingestion.json](grading/ingestion.json), [grading/records.jsonl.gz](grading/records.jsonl.gz), [Scope](#scope) |
 | **W2** Staged program, bounded calls, saved handoffs, resume | [pipeline/run.py](pipeline/run.py), [grading/calls.jsonl](grading/calls.jsonl), [checkpoints](grading/), [recording](evidence/resume_demo.mp4) |
-| **W3** Reproducible ranking, deployed dashboard + backend + DB, grounded AI recommendation | `python -m pipeline.downstream rank` (no model), [dashboard/](dashboard/), Neon Postgres, [live URL](https://br-round-shadow-b4txucoz-spotifydash.compute.c-6.us-east-2.aws.neon.tech/) |
+| **W3** Reproducible ranking, deployed dashboard + backend + DB, grounded AI recommendation | `python3 -m pipeline.rerank` (no model, no DB), [dashboard/](dashboard/), Neon Postgres, [live URL](https://br-round-shadow-b4txucoz-spotifydash.compute.c-6.us-east-2.aws.neon.tech/) |
 
 ## Architecture
 
@@ -133,7 +133,8 @@ Place the course dataset (Google Drive ZIP, 11 files) in `data/`. The full CSV i
 | Purpose | Command | Model calls? |
 |---|---|---|
 | Offline cost replay (default) | `.venv/bin/python cost/calculator.py` (`--rates-multiplier 2` to test) | **No** |
-| Regenerate ranking from saved outputs | `.venv/bin/python -m pipeline.downstream rank --db work/full.db --out-dir /tmp/rerank` | **No** |
+| Regenerate ranking from the committed grading files only (no DB, no venv needed) | `python3 -m pipeline.rerank --grading grading` → prints the ranking and confirms it matches `ranking.csv` and `claims.csv` | **No** |
+| Run manifest (source checksum, code version, prompts, models, output hashes) | `.venv/bin/python -m pipeline.manifest --run-dir runs/full` → [run_manifest.json](runs/full/run_manifest.json) | **No** |
 | Zero-API grading check | `cd data && python3 check_submission.py check --reference ../work/local-reference.json --submission ../grading --out ../work/self-check.json` | **No** |
 | Golden evaluation | `.venv/bin/python -m evals.golden --xlsx labeling/golden50_labeled_by_human.xlsx --db work/full.db` | **No** |
 | Offline system tests | `.venv/bin/python -m evals.system_tests --offline` | **No** |
@@ -165,6 +166,8 @@ Place the course dataset (Google Drive ZIP, 11 files) in `data/`. The full CSV i
 | Sentiment MAE / within ±0.5 (predeclared tolerance) | 0.24 / 82% |
 | Evidence quote is an exact source substring | 100% |
 | needs_review matches the human flag | 86% |
+| Evidence quote: full review text / code-selected sentence | 46 / 4. All 4 sentences were inspected and support the label (catalog ban, crash, queue/shuffle limits, "can't play a song"). |
+| Records with an unsupported entity | **4 of 21** records that have entities (see below) |
 
 **Error analysis** (all 22 disagreeing cases are listed in [golden_report.json](evals/golden_report.json)):
 - **Topic (11 cases):**
@@ -172,9 +175,15 @@ Place the course dataset (Google Drive ZIP, 11 files) in `data/`. The full CSV i
   - **Overlapping topics (5).** Ads + Premium (usability vs billing, both directions), lyrics + seek controls, ad volume hurting ears (playback vs usability), organizing saved albums (downloads vs usability). This is a single-label limitation.
   - **Generic or other (3).** "This app is bad work", the Tagalog "Lhat ng song nasa spotify", and the edited support review below.
 - **Intent (5 cases):** very short or non-English text ("Great...", a personal name, Tagalog), a boycott slogan mixed with "I hate this app", and garbled text about "a free dollar".
+- **Entities (found by inspection, not fixed):** the record-level `entities` use plain substring matching. That falsely adds `ads` when a review contains "bad", "leads" or "downloads". The field is frozen into `label_config`, so it is disclosed rather than silently rewritten. No memo number uses it: issue profiles recount terms with word boundaries ([downstream.py `PROFILE_TERMS`](pipeline/downstream.py)), which lowered the usability "ads" count from 5,276 to 4,430.
 - **Severity (12 cases):** 11 are off by exactly 1. Jev rates "can't play the songs I like" and "unable to play offline" as 4 (blocked), where the human chose 3. It rates ad-frequency complaints 3 where the human chose 2. The one larger gap is the ambiguous edited review below (human 1, Jev 4).
 
-**Independent verification.** A Claude Haiku verifier relabelled a seeded random sample of 999 texts without seeing the first prediction. Agreement with the enrichment labels was topic 86.2%, intent 92.2% and severity 80.6%. The 342 texts with any disagreement are listed in [verify_report.json](runs/full/verify_report.json). They concentrate in the same ambiguous areas as the golden set (usability vs billing for Premium-locked features; severity 2 vs 3).
+**Independent verification.** A Claude Haiku verifier relabelled a seeded random sample of 999 texts without seeing the first prediction. Agreement with the enrichment labels was topic 86.2%, intent 92.2% and severity 80.6%. The disagreements, measured from [verify_report.json](runs/full/verify_report.json), break down as follows:
+- **Severity:** 194 disagreements, 180 of them off by exactly 1 (13 by 2, 1 by 3).
+- **Topic:** 138 disagreements. Most frequent pairs, enrich → verify: usability→other 20, other→catalog 18, playback→usability 13, catalog→other 11, billing→usability 11. These are generic-vs-specific boundaries and the ads/Premium overlap.
+- **Intent:** 78 disagreements, led by complaint→cancellation 14, complaint→unclear 9 and request→complaint 9.
+
+These are the same boundary problems the golden set shows. The verifier is a second opinion, not ground truth.
 
 **System tests** ([evals/system_tests.py](evals/system_tests.py) → [system_tests.json](evals/system_tests.json)):
 - **Planted errors:** 10 verifier-agreeing records had their topic deliberately flipped in a test copy. The code comparison flagged 10/10.
@@ -187,7 +196,7 @@ Place the course dataset (Google Drive ZIP, 11 files) in `data/`. The full CSV i
 ## Limitations
 
 - Classification covers 100,000 of 660,609 nonempty reviews (a seeded random sample of distinct texts). Shares are sample estimates, and short repeated texts such as "good" are weighted by how often they occur.
-- Issues are coarse: one issue per primary topic. Code-computed profiles ([issue_profiles.json](runs/full/out/issue_profiles.json)) show sub-themes (ads, shuffle, Premium locks), but a finer grouping would make the recommendation more actionable. The first group/memo version named issues from the highest-severity tail, which gave misleading names (for example "Excessive mobile data usage" for playback). That was replaced by a seeded random evidence sample plus code-computed profiles (`group-v2`, `memo-v2`). Both versions' calls are in the log.
+- Issues are coarse: one issue per primary topic. Code-computed profiles ([issue_profiles.json](runs/full/out/issue_profiles.json)) show sub-themes (ads, shuffle, Premium locks), but a finer grouping would make the recommendation more actionable. The first group/memo version named issues from the highest-severity tail, which gave misleading names (for example "Excessive mobile data usage" for playback). That was replaced by a seeded random evidence sample plus code-computed profiles (`group-v2`, `memo-v2`). Then `v3` switched the profile term counts to word-boundary matching after the entity inspection above. All versions' calls are in the log, and the final memo is v3.
 - Reviews are self-selected, historical and public. Cancellation language is stated intent, not churn. There is no revenue, plan tier or causal evidence.
 - Jev pricing comes from third-party listings and should be reconciled with the TypeSafe dashboard. Failed calls have unknown usage, recorded as `null` rather than zero.
 - The 50 golden labels are a small diagnostic sample from one labeler.

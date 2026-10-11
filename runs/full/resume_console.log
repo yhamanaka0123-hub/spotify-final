@@ -254,3 +254,49 @@
   },
   "memo_problems": []
 }
+[enrich] 66079 texts already completed and saved (will NOT be re-sent); 0 pending distinct texts, workers=4, phase=resume
+[advisor] 0 low-confidence texts to claude-sonnet-5-5 (cap 0 = 1% of 56079 texts completed since 1791676572)
+[verify] reused saved verification (same enrich config)
+[rank] 8 issues, 39538 memberships; counts {'source_rows': 660622, 'completed': 100000, 'quarantined': 560622, 'cache_reused_ids': 33921, 'needs_review': 12532, 'quarantine_reasons': {'not_classified_outside_budget_scope': 560609, 'empty_review_text': 13}}
+[memo] recommended ISS-usability; code check problems: none
+{
+  "input": "data/spotify_reviews_18months.csv",
+  "db": "work/full.db",
+  "status": "completed",
+  "fresh": false,
+  "label_config": "jev-1.13.0+jevq-v1+schema-v1+advisor:claude-sonnet-5-5@0.5",
+  "workers": 4,
+  "phase": "resume",
+  "wall_seconds": 50.769,
+  "stage_seconds": {
+    "prepare": 0.001,
+    "enrich_jev": 3.787,
+    "enrich_advisor": 2.619,
+    "verify": 0.002,
+    "group_rank_memo_export": 42.739
+  },
+  "new_calls": 2,
+  "new_calls_by_role": {
+    "enrich": 0,
+    "verify": 0,
+    "group": 1,
+    "memo": 1
+  },
+  "new_failed_calls": 0,
+  "new_cost_usd": 0.033963,
+  "jev_completed": 0,
+  "jev_failed": 0,
+  "advisor_relabelled": 0,
+  "counts": {
+    "source_rows": 660622,
+    "completed": 100000,
+    "quarantined": 560622,
+    "cache_reused_ids": 33921,
+    "needs_review": 12532,
+    "quarantine_reasons": {
+      "not_classified_outside_budget_scope": 560609,
+      "empty_review_text": 13
+    }
+  },
+  "memo_problems": []
+}

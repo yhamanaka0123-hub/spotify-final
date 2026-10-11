@@ -1,37 +1,37 @@
 {
-  "input_sha256": "a77b6e776fe942fbc83a9873b9ca63fe564a28848fa1cf518b6cbaf6e61182f7",
+  "input_sha256": "c4c964c8b0687f722a89a632747c056e341ebb123a88f1b863839e356d1c3687",
   "issues": {
     "ISS-access": {
       "name": "Login and account access failures",
-      "summary": "Most reviews complain that users cannot log in, get logged out repeatedly, or cannot create or recover accounts."
+      "summary": "Most reviews complain that users cannot log in, get logged out repeatedly, or cannot create or recover accounts, even after reinstalling the app."
     },
     "ISS-billing": {
-      "name": "Free tier locked behind Premium",
-      "summary": "Most reviews complain that core features like playing specific songs, queuing, and playlists now require a Premium subscription, prompting cancellation threats."
+      "name": "Forced premium paywall for features",
+      "summary": "Most reviews complain that core features like skipping, shuffle, and song selection are locked behind premium, and that ads and subscription pressure have increased."
     },
     "ISS-catalog": {
       "name": "Missing songs and lyrics",
-      "summary": "Most reviews complain that certain songs, albums, or lyrics are unavailable, missing, or not displaying correctly."
+      "summary": "Most reviews complain that certain songs, albums, or lyrics are unavailable or missing from the catalog, and that recommendations are poor."
     },
     "ISS-downloads": {
       "name": "Offline downloads not working",
-      "summary": "Most reviews complain that downloaded music or podcasts will not play offline or that users cannot download content at all."
+      "summary": "Most reviews complain that downloaded music, podcasts, or playlists fail to play offline or cannot be downloaded at all."
     },
     "ISS-other": {
       "name": "General dissatisfaction with updates",
-      "summary": "Most reviews complain in broad, unspecific terms that recent updates have made the app worse and express general frustration."
+      "summary": "Most reviews are short, general complaints that the app has gotten worse with each update, with no specific feature named."
     },
     "ISS-playback": {
-      "name": "Playback stopping and crashing",
-      "summary": "Most reviews complain that music or podcasts stutter, cut out, pause unexpectedly, or the app crashes during playback."
+      "name": "Playback stops, stutters, or crashes",
+      "summary": "Most reviews complain that songs or podcasts cut out, stutter, or stop playing, and that the app crashes during playback."
     },
     "ISS-support": {
       "name": "Poor customer support responses",
-      "summary": "Most reviews complain that customer support is slow, unhelpful, or hard to reach when problems occur."
+      "summary": "Most reviews complain that customer support is slow, unhelpful, or unresponsive when users report problems."
     },
     "ISS-usability": {
-      "name": "Intrusive ads and cluttered interface",
-      "summary": "Most reviews complain about frequent ads, especially for free users and Premium subscribers, along with a cluttered or confusing interface after updates."
+      "name": "Ads and cluttered new interface",
+      "summary": "Most reviews complain that frequent ads and the redesigned interface make it hard to shuffle, queue, and find playlists and podcasts."
     }
   }
 }
