@@ -1,0 +1,41 @@
+{
+  "input": "data/spotify_reviews_18months.csv",
+  "db": "work/full.db",
+  "status": "completed",
+  "fresh": false,
+  "label_config": "jev-1.13.0+jevq-v1+schema-v1+advisor:claude-sonnet-5-5@0.5",
+  "workers": 4,
+  "phase": "resume",
+  "wall_seconds": 36.735,
+  "stage_seconds": {
+    "prepare": 0.0,
+    "enrich_jev": 2.595,
+    "enrich_advisor": 2.754,
+    "verify": 0.002,
+    "group_rank_memo_export": 30.271
+  },
+  "new_calls": 5,
+  "new_calls_by_role": {
+    "enrich": 4,
+    "verify": 0,
+    "group": 0,
+    "memo": 1
+  },
+  "new_failed_calls": 0,
+  "new_cost_usd": 0.026289,
+  "jev_completed": 4,
+  "jev_failed": 0,
+  "advisor_relabelled": 0,
+  "counts": {
+    "source_rows": 660622,
+    "completed": 100000,
+    "quarantined": 560622,
+    "cache_reused_ids": 33921,
+    "needs_review": 12532,
+    "quarantine_reasons": {
+      "not_classified_outside_budget_scope": 560609,
+      "empty_review_text": 13
+    }
+  },
+  "memo_problems": []
+}

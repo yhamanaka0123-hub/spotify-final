@@ -1,0 +1,37 @@
+{
+  "input_sha256": "c195507a5b678d2b037aa617e07ec525ac5b7d0777dc18fada9d7c9ada3716bf",
+  "issues": {
+    "ISS-access": {
+      "name": "Account hacked and lockouts",
+      "summary": "Users report their accounts being hacked, emails changed, devices connected without consent, and being unable to log in or recover playlists."
+    },
+    "ISS-billing": {
+      "name": "Unwanted charges after cancellation",
+      "summary": "Users are charged after cancelling or on free plans, get double-debited, or have auto-renewal payments continue without consent."
+    },
+    "ISS-catalog": {
+      "name": "Missing songs and lyrics",
+      "summary": "Users find songs, albums, and lyrics missing or not loading, and liked-songs content disappearing from the catalog."
+    },
+    "ISS-downloads": {
+      "name": "Downloaded music keeps disappearing",
+      "summary": "Users say their offline downloads and library are deleted or re-downloaded at lower quality, often after updates or payment issues."
+    },
+    "ISS-other": {
+      "name": "Security, trust, and data concerns",
+      "summary": "Users describe the app as corrupt, fraudulent, or unsafe, citing manipulated data, unauthorized device connections, and privacy worries about background sound collection."
+    },
+    "ISS-playback": {
+      "name": "Excessive mobile data usage",
+      "summary": "Users report the app consuming mobile data in the background or through previews despite data-saving settings being enabled."
+    },
+    "ISS-support": {
+      "name": "Poor customer support responses",
+      "summary": "Users find customer service unresponsive or unhelpful, especially for hacked accounts, double withdrawals, and billing disputes."
+    },
+    "ISS-usability": {
+      "name": "Liked songs deleted and poor recommendations",
+      "summary": "Users say their liked songs and playlists vanish without explanation, and that recommendations ignore their selections, mood, or disabled settings."
+    }
+  }
+}

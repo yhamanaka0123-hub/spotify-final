@@ -1,0 +1,1 @@
+{"finished_at": 1791676567.8280706, "phase": "initial", "jev_completed": 0, "jev_failed": 0, "jev_seconds": 0.0, "advisor_relabelled": 86, "wall_seconds": 58.97, "spent_usd_run_dir_total": 0.584635, "label_config": "jev-1.13.0+jevq-v1+schema-v1+advisor:claude-sonnet-5-5@0.5"}

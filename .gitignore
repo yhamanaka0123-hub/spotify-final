@@ -12,3 +12,10 @@ __pycache__/
 
 # Local working databases / large intermediates
 work/
+
+# Large original screen recording (compressed copy evidence/resume_demo.mp4 is committed)
+evidence/*_original.mp4
+
+# Duplicates of committed grading/ files (records.jsonl.gz, calls.jsonl)
+runs/full/out/records.jsonl
+runs/full/calls.jsonl

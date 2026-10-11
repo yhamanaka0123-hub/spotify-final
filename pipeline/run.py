@@ -50,7 +50,11 @@ def main():
         done, failed, _ = enrich.run_jev(con, run, args.workers, args.stop_after)
         stages["enrich_jev"] = round(time.time() - t, 3)
         t = time.time()
-        advised = enrich.run_advisor(con, run, since=t0)
+        since = t0
+        ckpt = args.run_dir / "checkpoint_before.json"
+        if args.phase == "resume" and ckpt.exists():  # cover every text completed after the checkpoint
+            since = json.loads(ckpt.read_text())["saved_at_epoch"]
+        advised = enrich.run_advisor(con, run, since=since)
         if args.stop_after is not None:
             raise SystemExit(f"[run] stopped after {args.stop_after} texts + advisor (interruption demo)")
         stages["enrich_advisor"] = round(time.time() - t, 3)
@@ -65,6 +69,9 @@ def main():
         t = time.time()
         result = downstream.run_downstream(con, run, args.run_dir / "out")
         stages["group_rank_memo_export"] = round(time.time() - t, 3)
+    except KeyboardInterrupt:
+        print("\n[run] INTERRUPTED (Ctrl+C). Every completed result is already saved; rerun the same command to resume.")
+        raise SystemExit(130)
     except BudgetExceeded as e:
         print(f"[run] STOP budget: {e}")
         status = "stopped_budget"

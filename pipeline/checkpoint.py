@@ -27,7 +27,7 @@ def main():
     ids = completed_ids(con)
     texts = con.execute("SELECT COUNT(*) FROM results WHERE label_config=?", (LABEL_CONFIG,)).fetchone()[0]
     args.out.parent.mkdir(parents=True, exist_ok=True)
-    args.out.write_text(json.dumps({"label_config": LABEL_CONFIG, "saved_at": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
+    args.out.write_text(json.dumps({"label_config": LABEL_CONFIG, "saved_at": time.strftime("%Y-%m-%dT%H:%M:%S%z"), "saved_at_epoch": time.time(),
                                     "completed_texts": texts, "completed_count": len(ids),
                                     "completed_ids": ids}) + "\n", encoding="utf-8")
     print(f"{args.out}: {len(ids)} completed review IDs from {texts} classified texts")

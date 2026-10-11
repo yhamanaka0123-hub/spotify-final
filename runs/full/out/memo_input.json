@@ -1,0 +1,578 @@
+{
+  "run_counts": {
+    "source_rows": 660622,
+    "completed": 100000,
+    "quarantined": 560622,
+    "cache_reused_ids": 33921,
+    "needs_review": 12532,
+    "quarantine_reasons": {
+      "not_classified_outside_budget_scope": 560609,
+      "empty_review_text": 13
+    }
+  },
+  "ranking": [
+    {
+      "rank": 1,
+      "issue_id": "ISS-usability",
+      "complaint_count": 11680,
+      "severity_sum": 33805,
+      "mean_severity": "2.894264",
+      "priority_score": 33805
+    },
+    {
+      "rank": 2,
+      "issue_id": "ISS-other",
+      "complaint_count": 11864,
+      "severity_sum": 23178,
+      "mean_severity": "1.953641",
+      "priority_score": 23178
+    },
+    {
+      "rank": 3,
+      "issue_id": "ISS-playback",
+      "complaint_count": 5396,
+      "severity_sum": 18494,
+      "mean_severity": "3.427354",
+      "priority_score": 18494
+    },
+    {
+      "rank": 4,
+      "issue_id": "ISS-billing",
+      "complaint_count": 6370,
+      "severity_sum": 17713,
+      "mean_severity": "2.780691",
+      "priority_score": 17713
+    },
+    {
+      "rank": 5,
+      "issue_id": "ISS-access",
+      "complaint_count": 1360,
+      "severity_sum": 5341,
+      "mean_severity": "3.927206",
+      "priority_score": 5341
+    },
+    {
+      "rank": 6,
+      "issue_id": "ISS-catalog",
+      "complaint_count": 1837,
+      "severity_sum": 5197,
+      "mean_severity": "2.829069",
+      "priority_score": 5197
+    },
+    {
+      "rank": 7,
+      "issue_id": "ISS-downloads",
+      "complaint_count": 933,
+      "severity_sum": 3106,
+      "mean_severity": "3.329046",
+      "priority_score": 3106
+    },
+    {
+      "rank": 8,
+      "issue_id": "ISS-support",
+      "complaint_count": 98,
+      "severity_sum": 263,
+      "mean_severity": "2.683673",
+      "priority_score": 263
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C-usability-complaint_count",
+      "issue_id": "ISS-usability",
+      "metric": "complaint_count",
+      "value": "11680"
+    },
+    {
+      "claim_id": "C-usability-severity_sum",
+      "issue_id": "ISS-usability",
+      "metric": "severity_sum",
+      "value": "33805"
+    },
+    {
+      "claim_id": "C-usability-mean_severity",
+      "issue_id": "ISS-usability",
+      "metric": "mean_severity",
+      "value": "2.894264"
+    },
+    {
+      "claim_id": "C-usability-priority_score",
+      "issue_id": "ISS-usability",
+      "metric": "priority_score",
+      "value": "33805"
+    },
+    {
+      "claim_id": "C-other-complaint_count",
+      "issue_id": "ISS-other",
+      "metric": "complaint_count",
+      "value": "11864"
+    },
+    {
+      "claim_id": "C-other-severity_sum",
+      "issue_id": "ISS-other",
+      "metric": "severity_sum",
+      "value": "23178"
+    },
+    {
+      "claim_id": "C-other-mean_severity",
+      "issue_id": "ISS-other",
+      "metric": "mean_severity",
+      "value": "1.953641"
+    },
+    {
+      "claim_id": "C-other-priority_score",
+      "issue_id": "ISS-other",
+      "metric": "priority_score",
+      "value": "23178"
+    },
+    {
+      "claim_id": "C-playback-complaint_count",
+      "issue_id": "ISS-playback",
+      "metric": "complaint_count",
+      "value": "5396"
+    },
+    {
+      "claim_id": "C-playback-severity_sum",
+      "issue_id": "ISS-playback",
+      "metric": "severity_sum",
+      "value": "18494"
+    },
+    {
+      "claim_id": "C-playback-mean_severity",
+      "issue_id": "ISS-playback",
+      "metric": "mean_severity",
+      "value": "3.427354"
+    },
+    {
+      "claim_id": "C-playback-priority_score",
+      "issue_id": "ISS-playback",
+      "metric": "priority_score",
+      "value": "18494"
+    },
+    {
+      "claim_id": "C-billing-complaint_count",
+      "issue_id": "ISS-billing",
+      "metric": "complaint_count",
+      "value": "6370"
+    },
+    {
+      "claim_id": "C-billing-severity_sum",
+      "issue_id": "ISS-billing",
+      "metric": "severity_sum",
+      "value": "17713"
+    },
+    {
+      "claim_id": "C-billing-mean_severity",
+      "issue_id": "ISS-billing",
+      "metric": "mean_severity",
+      "value": "2.780691"
+    },
+    {
+      "claim_id": "C-billing-priority_score",
+      "issue_id": "ISS-billing",
+      "metric": "priority_score",
+      "value": "17713"
+    },
+    {
+      "claim_id": "C-access-complaint_count",
+      "issue_id": "ISS-access",
+      "metric": "complaint_count",
+      "value": "1360"
+    },
+    {
+      "claim_id": "C-access-severity_sum",
+      "issue_id": "ISS-access",
+      "metric": "severity_sum",
+      "value": "5341"
+    },
+    {
+      "claim_id": "C-access-mean_severity",
+      "issue_id": "ISS-access",
+      "metric": "mean_severity",
+      "value": "3.927206"
+    },
+    {
+      "claim_id": "C-access-priority_score",
+      "issue_id": "ISS-access",
+      "metric": "priority_score",
+      "value": "5341"
+    },
+    {
+      "claim_id": "C-catalog-complaint_count",
+      "issue_id": "ISS-catalog",
+      "metric": "complaint_count",
+      "value": "1837"
+    },
+    {
+      "claim_id": "C-catalog-severity_sum",
+      "issue_id": "ISS-catalog",
+      "metric": "severity_sum",
+      "value": "5197"
+    },
+    {
+      "claim_id": "C-catalog-mean_severity",
+      "issue_id": "ISS-catalog",
+      "metric": "mean_severity",
+      "value": "2.829069"
+    },
+    {
+      "claim_id": "C-catalog-priority_score",
+      "issue_id": "ISS-catalog",
+      "metric": "priority_score",
+      "value": "5197"
+    },
+    {
+      "claim_id": "C-downloads-complaint_count",
+      "issue_id": "ISS-downloads",
+      "metric": "complaint_count",
+      "value": "933"
+    },
+    {
+      "claim_id": "C-downloads-severity_sum",
+      "issue_id": "ISS-downloads",
+      "metric": "severity_sum",
+      "value": "3106"
+    },
+    {
+      "claim_id": "C-downloads-mean_severity",
+      "issue_id": "ISS-downloads",
+      "metric": "mean_severity",
+      "value": "3.329046"
+    },
+    {
+      "claim_id": "C-downloads-priority_score",
+      "issue_id": "ISS-downloads",
+      "metric": "priority_score",
+      "value": "3106"
+    },
+    {
+      "claim_id": "C-support-complaint_count",
+      "issue_id": "ISS-support",
+      "metric": "complaint_count",
+      "value": "98"
+    },
+    {
+      "claim_id": "C-support-severity_sum",
+      "issue_id": "ISS-support",
+      "metric": "severity_sum",
+      "value": "263"
+    },
+    {
+      "claim_id": "C-support-mean_severity",
+      "issue_id": "ISS-support",
+      "metric": "mean_severity",
+      "value": "2.683673"
+    },
+    {
+      "claim_id": "C-support-priority_score",
+      "issue_id": "ISS-support",
+      "metric": "priority_score",
+      "value": "263"
+    }
+  ],
+  "issues": {
+    "ISS-access": {
+      "name": "Account hacked and lockouts",
+      "summary": "Users report their accounts being hacked, emails changed, devices connected without consent, and being unable to log in or recover playlists."
+    },
+    "ISS-billing": {
+      "name": "Unwanted charges after cancellation",
+      "summary": "Users are charged after cancelling or on free plans, get double-debited, or have auto-renewal payments continue without consent."
+    },
+    "ISS-catalog": {
+      "name": "Missing songs and lyrics",
+      "summary": "Users find songs, albums, and lyrics missing or not loading, and liked-songs content disappearing from the catalog."
+    },
+    "ISS-downloads": {
+      "name": "Downloaded music keeps disappearing",
+      "summary": "Users say their offline downloads and library are deleted or re-downloaded at lower quality, often after updates or payment issues."
+    },
+    "ISS-other": {
+      "name": "Security, trust, and data concerns",
+      "summary": "Users describe the app as corrupt, fraudulent, or unsafe, citing manipulated data, unauthorized device connections, and privacy worries about background sound collection."
+    },
+    "ISS-playback": {
+      "name": "Excessive mobile data usage",
+      "summary": "Users report the app consuming mobile data in the background or through previews despite data-saving settings being enabled."
+    },
+    "ISS-support": {
+      "name": "Poor customer support responses",
+      "summary": "Users find customer service unresponsive or unhelpful, especially for hacked accounts, double withdrawals, and billing disputes."
+    },
+    "ISS-usability": {
+      "name": "Liked songs deleted and poor recommendations",
+      "summary": "Users say their liked songs and playlists vanish without explanation, and that recommendations ignore their selections, mood, or disabled settings."
+    }
+  },
+  "evidence_pack": {
+    "ISS-usability": [
+      {
+        "review_id": "f2c11a77-9616-4d3c-9ea9-85895f42ea7c",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "It just deleted all my liked songs out of nowhere and said I only had 10 when I had over 800 before."
+      },
+      {
+        "review_id": "ddaed4d6-1957-4209-93a1-76e6ef0f32ea",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "Annoying adds and they keep adding chill songs to \"adrenaline workout\" or \"200 bpm\" playlists, what a buzzkill..."
+      },
+      {
+        "review_id": "67753988-a6ac-4582-8f72-62bf0af58adc",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "After having a paid subscription for years and curating a liked songs playlist, Spotify just somehow deleted almost all of it."
+      },
+      {
+        "review_id": "c09b603b-2bc9-4ad9-91c2-7e4ea4149e9f",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "Wow, it IGNORES the songs I select, plays gawdawful music I never asked to hear, harasses me with predatory commercials that prey on addiction, AND steals my metered data to do all that, and you want ME to give YOU money????"
+      },
+      {
+        "review_id": "1b72a43a-0608-4b73-991a-b9fbe84a5ebc",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "I lost all my liked songs for no reason"
+      },
+      {
+        "review_id": "578e4e04-2a8d-48db-99dd-8bb34291ba21",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "Other than the fact they collect data they shouldn't on your phone and sell it, it keeps playing random stupid songs DESPITE the fact I turned that feature off"
+      },
+      {
+        "review_id": "87695c57-a1ed-45e9-8395-abc24f32d855",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "Worst app ever! This app has deleted all my liked songs without my permission also this app doesn't recommend new songs according to my mood"
+      },
+      {
+        "review_id": "e6b6cbef-e961-47f3-8a05-ff74e752f2ad",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "One day I logged out of my Spotify account in which I had 3 playlists but when after some time I logged back in all three were nowhere to be found I lost all 3 did everything to restore but couldn't get it ."
+      }
+    ],
+    "ISS-other": [
+      {
+        "review_id": "1a6aef90-cb8c-4167-a585-a0aa3b4b67bc",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "CORRUPT !! MANIPULATES DATA !! PARTIAL ASF !!"
+      },
+      {
+        "review_id": "59569840-3123-4421-98b7-f987ff1662b3",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "This application is very nonsense application I request all people don't download this bug because you are risking your mobile and you are also risking your email id ."
+      },
+      {
+        "review_id": "5c07a2fa-4f13-4881-b80e-cd0b50f8e79f",
+        "severity": 5,
+        "intent": "cancellation",
+        "quote": "Love Spotify but I will be canceling my subscription as I understand you have just won a patent to listen to your users and their background sound to be able to 'guage their emotional state'."
+      },
+      {
+        "review_id": "4484a927-88db-468b-843a-47ff0ef7655a",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "Corrupt!!! Fake data!!!!"
+      },
+      {
+        "review_id": "638859cc-ef49-4402-8050-fa6267c9fad1",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "Fraudulent app and its ceo"
+      },
+      {
+        "review_id": "60fef0e1-ad63-4b80-902c-5729f5947bca",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "Elrich is a scum. He'd manipulated the chart for bp."
+      },
+      {
+        "review_id": "82160961-72d8-47c1-b322-4257c94f0ab5",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "Other devices has been connecting to my phone.. my bluetooth isnt even on. \nHow is this even happening?"
+      },
+      {
+        "review_id": "c399ae5c-34d0-4f8a-8632-b28d83f7fd1b",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "Third party app. Total unsecure app."
+      }
+    ],
+    "ISS-playback": [
+      {
+        "review_id": "c2d7593b-6de6-4f0a-83cc-826772b5d043",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "huge consume on mobile data"
+      },
+      {
+        "review_id": "0f6f9680-565e-4f20-80a2-0345c37f2220",
+        "severity": 5,
+        "intent": "cancellation",
+        "quote": "Will not stop synching over cellular data despite cellular data unchecked."
+      },
+      {
+        "review_id": "e9fd481d-02a2-4fae-ba8a-5c537d867243",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "Previews should NOT play without consent. New podcast landing page consumes data by the gig"
+      },
+      {
+        "review_id": "82b77aa7-28f6-4339-b65a-47898dabdd4a",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "Always trying to run and has used mobile data, with zero permission to, without the app being opened by me."
+      },
+      {
+        "review_id": "94d80c8a-b4f8-408d-b8ef-ae5c73bce5f7",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "Very bad app don't instead it you waste your data"
+      },
+      {
+        "review_id": "776e0be0-6696-4fe4-b66f-25dc688ff4a4",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "Don't install worst app for music In this app have lot of bugs and also track your data"
+      },
+      {
+        "review_id": "8f7ba4b7-654e-47ff-9bca-c37d07b03fee",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "Despite setting app to use wifi only, always finds a way to chew through my data."
+      },
+      {
+        "review_id": "9e32e768-6c3a-45ff-b20a-6ab0c49cdb97",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "This app is very danger bye bacgriund data user"
+      }
+    ],
+    "ISS-billing": [
+      {
+        "review_id": "01bc38c1-0d0b-4716-a3ed-a7fc3a0aa362",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "It charged me after I canceled my plan long story short don't put your card on here"
+      },
+      {
+        "review_id": "1cdf8985-d8e8-4641-9822-ed1e48937778",
+        "severity": 5,
+        "intent": "cancellation",
+        "quote": "Canceled my membership and they still charged my card 😒"
+      },
+      {
+        "review_id": "fb7affb6-8b6a-4cfc-92d6-9e2c9f5c768c",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "I love the app but I broke my phone and I have a loan phone when I downloaded spotify again I can't get my premium account back and the debit order still goes off my account ...."
+      },
+      {
+        "review_id": "20575dea-2c2d-40a1-bae8-1eedd3b4dab1",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "They're lying, if you use premium be careful cause they'll steal your money, i used free premium for 2 month and when they give me a notice that my premiun is going to expire for 1 whole week the website keep saying error, i think they do it on purpose so you have to pay to continue the premium, if "
+      },
+      {
+        "review_id": "d8b50740-27c1-4add-a46f-5027e0e0bac1",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "I bought premium yesterday....fine it went but why all of a sudden you guys debited me twice for the individual premium cause I don't get and I need a refund immediately"
+      },
+      {
+        "review_id": "9a5e9e59-0446-4b58-bbce-450ec0c371b8",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "Very poor customer support and on the top of that they charge even if the screen shows u r on free plan."
+      },
+      {
+        "review_id": "5ef5a475-70f0-450f-8af7-e79ca5b662bb",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "The recommendations are amazing, i even subscribe for premium but my last subscription make me irritates, Spotify took my payment but i haven't subscribe"
+      },
+      {
+        "review_id": "f3440c8d-007a-4d09-bd7c-72bb3a1f1cbc",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "I don't like the auto renew. I lost money without my concent."
+      }
+    ],
+    "ISS-access": [
+      {
+        "review_id": "efe984b3-24d3-439a-8f2e-655ca9d166ef",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "But now I'm starting to get worried about my account getting hacked."
+      },
+      {
+        "review_id": "5213b954-ec6d-44e9-9e2a-fee524f319d1",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "My account got hacked. Someone else changed my spotify email."
+      },
+      {
+        "review_id": "e8aef889-3b9d-4f17-a45c-46c69f6e7979",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "Received email said that I changed my email address!! Scam ??"
+      },
+      {
+        "review_id": "f87e89c0-1f5d-48cc-b30d-d66d43f91d0d",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "New phone and my account didn't save and or cross over, lost all my play lists.......unsatisfactory!!!"
+      },
+      {
+        "review_id": "91b3f409-7fcf-472b-a308-29361707085e",
+        "severity": 5,
+        "intent": "cancellation",
+        "quote": "This is my premium (real) account And I'm unable to log in to my own account and beside that , I got a massage from my bank of ₹119 debuted."
+      },
+      {
+        "review_id": "8d36d488-3a8d-4aeb-8b85-6b1a9135aa19",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "The app and your subscriptions are not secure, customer support is difficult, try other music streaming platforms."
+      },
+      {
+        "review_id": "9b64db70-f016-43f3-bc14-c603979bc72a",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "Someone else's phone is connected to my account, I've logged out all devices but can't get rid of this person...he also controls my songs... rectify this issues pls"
+      },
+      {
+        "review_id": "6b93fff3-58a8-4d39-b021-02fd592ebd17",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "Spotify is the only music app I use but unfortunately, you can have your account hacked randomly by anyone."
+      }
+    ]
+  },
+  "label_definitions": {
+    "topics": [
+      "access",
+      "usability",
+      "playback",
+      "downloads",
+      "catalog",
+      "billing",
+      "support",
+      "other"
+    ],
+    "severity": {
+      "1": "No reported problem: praise, neutral or unclear content, or a pure feature request.",
+      "2": "Dislike, generic criticism, minor annoyance, or a cosmetic issue; no functional loss stated.",
+      "3": "A degraded or restricted function; some use or a workaround remains (e.g. too many ads, features limited, intermittent stops).",
+      "4": "A core task is clearly blocked, e.g. cannot log in, cannot play music, app will not open.",
+      "5": "Explicit serious financial, privacy, or data harm (e.g. charged wrongly, account data exposed)."
+    }
+  }
+}

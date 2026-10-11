@@ -180,7 +180,10 @@ def run_jev(con, run, workers, stop_after):
     todo = pending_texts(con)
     if stop_after is not None:
         todo = todo[:stop_after]
-    print(f"[enrich] {len(todo)} pending distinct texts, workers={workers}, label_config={LABEL_CONFIG}")
+    saved = con.execute("SELECT COUNT(*) FROM results r JOIN texts t USING(text_key) WHERE r.label_config=? "
+                        "AND t.in_scope=1", (LABEL_CONFIG,)).fetchone()[0]
+    print(f"[enrich] {saved} texts already completed and saved (will NOT be re-sent); "
+          f"{len(todo)} pending distinct texts, workers={workers}, phase={run.phase}")
     done = failed = streak = 0
     t0 = time.time()
     with ThreadPoolExecutor(max_workers=workers) as pool:
@@ -238,7 +241,9 @@ def run_advisor(con, run, since=0.0):
     import anthropic
     window = con.execute("SELECT COUNT(*) FROM results WHERE label_config=? AND created_at >= ?",
                          (LABEL_CONFIG, since)).fetchone()[0]
-    cap = int(window * ADVISOR_MAX_FRACTION + 0.999)
+    already = con.execute("SELECT COUNT(*) FROM results WHERE label_config=? AND created_at >= ? AND decided_by='advisor'",
+                          (LABEL_CONFIG, since)).fetchone()[0]
+    cap = max(0, int(window * ADVISOR_MAX_FRACTION + 0.999) - already)  # a rerun never exceeds the declared cap
     rows = con.execute("""
         SELECT r.text_key, t.review_text, r.source_review_id FROM results r JOIN texts t USING (text_key)
         WHERE r.label_config=? AND r.decided_by='jev' AND r.created_at >= ? AND MIN(r.conf_topic, r.conf_intent) < ?

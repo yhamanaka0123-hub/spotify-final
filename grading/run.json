@@ -1,0 +1,11 @@
+{
+  "version": "a5-audit-v1",
+  "analysis_count": 660622,
+  "analysis_sha256": "1fc85de68a304dd8978b537cfa58793d5f41cbaf417fa32cb53899f83a2fcef6",
+  "classification_input_fields": [
+    "review_text"
+  ],
+  "allow_multi_issue": false,
+  "label_config": "jev-1.13.0+jevq-v1+schema-v1+advisor:claude-sonnet-5-5@0.5",
+  "declared_scope": "All 660,622 source IDs are accounted for. A seeded random sample of distinct texts (plus every golden-50 text) covering 100,000 review IDs was classified; identical texts reuse one validated result via cache_source_id. The 13 empty texts are quarantined as empty_review_text; all other unclassified rows are quarantined as not_classified_outside_budget_scope."
+}

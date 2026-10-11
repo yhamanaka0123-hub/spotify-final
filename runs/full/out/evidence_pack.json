@@ -1,0 +1,402 @@
+{
+  "ISS-access": [
+    {
+      "review_id": "efe984b3-24d3-439a-8f2e-655ca9d166ef",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "But now I'm starting to get worried about my account getting hacked."
+    },
+    {
+      "review_id": "5213b954-ec6d-44e9-9e2a-fee524f319d1",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "My account got hacked. Someone else changed my spotify email."
+    },
+    {
+      "review_id": "e8aef889-3b9d-4f17-a45c-46c69f6e7979",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "Received email said that I changed my email address!! Scam ??"
+    },
+    {
+      "review_id": "f87e89c0-1f5d-48cc-b30d-d66d43f91d0d",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "New phone and my account didn't save and or cross over, lost all my play lists.......unsatisfactory!!!"
+    },
+    {
+      "review_id": "91b3f409-7fcf-472b-a308-29361707085e",
+      "severity": 5,
+      "intent": "cancellation",
+      "quote": "This is my premium (real) account And I'm unable to log in to my own account and beside that , I got a massage from my bank of ₹119 debuted."
+    },
+    {
+      "review_id": "8d36d488-3a8d-4aeb-8b85-6b1a9135aa19",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "The app and your subscriptions are not secure, customer support is difficult, try other music streaming platforms."
+    },
+    {
+      "review_id": "9b64db70-f016-43f3-bc14-c603979bc72a",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "Someone else's phone is connected to my account, I've logged out all devices but can't get rid of this person...he also controls my songs... rectify this issues pls"
+    },
+    {
+      "review_id": "6b93fff3-58a8-4d39-b021-02fd592ebd17",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "Spotify is the only music app I use but unfortunately, you can have your account hacked randomly by anyone."
+    }
+  ],
+  "ISS-billing": [
+    {
+      "review_id": "01bc38c1-0d0b-4716-a3ed-a7fc3a0aa362",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "It charged me after I canceled my plan long story short don't put your card on here"
+    },
+    {
+      "review_id": "1cdf8985-d8e8-4641-9822-ed1e48937778",
+      "severity": 5,
+      "intent": "cancellation",
+      "quote": "Canceled my membership and they still charged my card 😒"
+    },
+    {
+      "review_id": "fb7affb6-8b6a-4cfc-92d6-9e2c9f5c768c",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "I love the app but I broke my phone and I have a loan phone when I downloaded spotify again I can't get my premium account back and the debit order still goes off my account ...."
+    },
+    {
+      "review_id": "20575dea-2c2d-40a1-bae8-1eedd3b4dab1",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "They're lying, if you use premium be careful cause they'll steal your money, i used free premium for 2 month and when they give me a notice that my premiun is going to expire for 1 whole week the website keep saying error, i think they do it on purpose so you have to pay to continue the premium, if "
+    },
+    {
+      "review_id": "d8b50740-27c1-4add-a46f-5027e0e0bac1",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "I bought premium yesterday....fine it went but why all of a sudden you guys debited me twice for the individual premium cause I don't get and I need a refund immediately"
+    },
+    {
+      "review_id": "9a5e9e59-0446-4b58-bbce-450ec0c371b8",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "Very poor customer support and on the top of that they charge even if the screen shows u r on free plan."
+    },
+    {
+      "review_id": "5ef5a475-70f0-450f-8af7-e79ca5b662bb",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "The recommendations are amazing, i even subscribe for premium but my last subscription make me irritates, Spotify took my payment but i haven't subscribe"
+    },
+    {
+      "review_id": "f3440c8d-007a-4d09-bd7c-72bb3a1f1cbc",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "I don't like the auto renew. I lost money without my concent."
+    }
+  ],
+  "ISS-catalog": [
+    {
+      "review_id": "786ec7b7-cab2-4946-80d7-4d22608e2b3e",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "Today I opened my liked songs and over 1000 of my songs are just GONE! wth spotify and ur support sucks so i have to type this stuff here ugh going hella down hill these days"
+    },
+    {
+      "review_id": "5fa459da-a533-42a9-88af-b31f94822afa",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "Spotify is corrupt, it has unfairly taken views from BTS, apart from the fact that it removed several of their songs and leaked some and did not justify why."
+    },
+    {
+      "review_id": "98b0b658-151b-49c1-b5fd-64595af2b5ba",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "Giving incorrect information that cause damage artist reputation."
+    },
+    {
+      "review_id": "0c70ee06-f85e-4eb5-8db6-ca28ea7fd907",
+      "severity": 4,
+      "intent": "complaint",
+      "quote": "Its all good and fun but..I can't see the lyrics of songs..."
+    },
+    {
+      "review_id": "62676378-d828-4598-8e19-ed332051b0b5",
+      "severity": 4,
+      "intent": "complaint",
+      "quote": "I was searching for a couple of songs. I can not find the songs or the album. A little disappointed."
+    },
+    {
+      "review_id": "883a042b-cfc1-4171-89f9-726925b7fde3",
+      "severity": 4,
+      "intent": "complaint",
+      "quote": "The lyrics ARE NOTTT LOADING I searched up for help on Google for this I tried everything single things yet it doesn't WORKK"
+    },
+    {
+      "review_id": "00c87f7f-d9cf-4334-84a3-ad532086271c",
+      "severity": 4,
+      "intent": "complaint",
+      "quote": "Actually I want to say is that I don't know if this is happening to anyone but it happened to me that after the movie Bhediya launched it's been a long time but still none of the songs have launched in Spotify."
+    },
+    {
+      "review_id": "93097cc1-1c59-4838-b273-ba85c64a5ca9",
+      "severity": 4,
+      "intent": "complaint",
+      "quote": "Where is my Lyrics????!!!!!!!"
+    }
+  ],
+  "ISS-downloads": [
+    {
+      "review_id": "43b94c48-f6c5-46e0-809d-bbed44d91d79",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "This apps keeps deleting my entire library at the most incovient times"
+    },
+    {
+      "review_id": "1924242d-354e-4686-bb32-cbc88aead7a6",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "I download in high quality and after 2 weeks you delete all my music and re-download it all in low quality....."
+    },
+    {
+      "review_id": "ee6659e4-3b74-4599-858b-eff0e6b398b2",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "why does my music keep getting deleted"
+    },
+    {
+      "review_id": "0c25b839-02c9-4d1d-9271-705270abd65d",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "Most stuff is good untill you have an issue with payment and they delete all the offline music someone had but judging from my research🤔, this only happens alot in Africa like are you guys racists too cos some of don't mind but good music not some baseless propaganda."
+    },
+    {
+      "review_id": "35ace8c2-e17d-43a4-bf19-76fe898bad09",
+      "severity": 5,
+      "intent": "cancellation",
+      "quote": "It been great till the last up date it deleted everything I had and I pay for mine so at this point I'm about to get rid of it if they don't do something about it fast"
+    },
+    {
+      "review_id": "dfc49957-9262-4b61-83aa-d2338c0ecc42",
+      "severity": 5,
+      "intent": "cancellation",
+      "quote": "Brilliant for years but something is wrong, lost my entire library and music collection."
+    },
+    {
+      "review_id": "ff2d1473-3554-4ed5-8a36-2cda5ad22263",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "Lost all my songs I downloaded tired off ads that I am not interested in"
+    },
+    {
+      "review_id": "688fab3a-d3e8-46d1-826a-d7e6e861b358",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "it is very dangerous. It ate all my data."
+    }
+  ],
+  "ISS-other": [
+    {
+      "review_id": "1a6aef90-cb8c-4167-a585-a0aa3b4b67bc",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "CORRUPT !! MANIPULATES DATA !! PARTIAL ASF !!"
+    },
+    {
+      "review_id": "59569840-3123-4421-98b7-f987ff1662b3",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "This application is very nonsense application I request all people don't download this bug because you are risking your mobile and you are also risking your email id ."
+    },
+    {
+      "review_id": "5c07a2fa-4f13-4881-b80e-cd0b50f8e79f",
+      "severity": 5,
+      "intent": "cancellation",
+      "quote": "Love Spotify but I will be canceling my subscription as I understand you have just won a patent to listen to your users and their background sound to be able to 'guage their emotional state'."
+    },
+    {
+      "review_id": "4484a927-88db-468b-843a-47ff0ef7655a",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "Corrupt!!! Fake data!!!!"
+    },
+    {
+      "review_id": "638859cc-ef49-4402-8050-fa6267c9fad1",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "Fraudulent app and its ceo"
+    },
+    {
+      "review_id": "60fef0e1-ad63-4b80-902c-5729f5947bca",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "Elrich is a scum. He'd manipulated the chart for bp."
+    },
+    {
+      "review_id": "82160961-72d8-47c1-b322-4257c94f0ab5",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "Other devices has been connecting to my phone.. my bluetooth isnt even on. \nHow is this even happening?"
+    },
+    {
+      "review_id": "c399ae5c-34d0-4f8a-8632-b28d83f7fd1b",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "Third party app. Total unsecure app."
+    }
+  ],
+  "ISS-playback": [
+    {
+      "review_id": "c2d7593b-6de6-4f0a-83cc-826772b5d043",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "huge consume on mobile data"
+    },
+    {
+      "review_id": "0f6f9680-565e-4f20-80a2-0345c37f2220",
+      "severity": 5,
+      "intent": "cancellation",
+      "quote": "Will not stop synching over cellular data despite cellular data unchecked."
+    },
+    {
+      "review_id": "e9fd481d-02a2-4fae-ba8a-5c537d867243",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "Previews should NOT play without consent. New podcast landing page consumes data by the gig"
+    },
+    {
+      "review_id": "82b77aa7-28f6-4339-b65a-47898dabdd4a",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "Always trying to run and has used mobile data, with zero permission to, without the app being opened by me."
+    },
+    {
+      "review_id": "94d80c8a-b4f8-408d-b8ef-ae5c73bce5f7",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "Very bad app don't instead it you waste your data"
+    },
+    {
+      "review_id": "776e0be0-6696-4fe4-b66f-25dc688ff4a4",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "Don't install worst app for music In this app have lot of bugs and also track your data"
+    },
+    {
+      "review_id": "8f7ba4b7-654e-47ff-9bca-c37d07b03fee",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "Despite setting app to use wifi only, always finds a way to chew through my data."
+    },
+    {
+      "review_id": "9e32e768-6c3a-45ff-b20a-6ab0c49cdb97",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "This app is very danger bye bacgriund data user"
+    }
+  ],
+  "ISS-support": [
+    {
+      "review_id": "ed3dfeb7-3986-4ac0-95f3-691714d8ed8c",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "One of the worst app and customer service."
+    },
+    {
+      "review_id": "4c5e940d-9bd7-4d56-a9d2-b8b7625d251a",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "The worst ,they have the worst customer service who can't follow up where my money went despite me paying for premium thrice."
+    },
+    {
+      "review_id": "38ba03cb-537f-4280-9a51-caddb4176987",
+      "severity": 5,
+      "intent": "cancellation",
+      "quote": "Even after acknowledging someone hacked my account, they refused to help unless I provided my credit card or bank statement."
+    },
+    {
+      "review_id": "946070c1-d690-4251-a550-07b0af85859c",
+      "severity": 5,
+      "intent": "cancellation",
+      "quote": "Great App- Bad customer service."
+    },
+    {
+      "review_id": "e0e52795-6a95-4bfd-adb0-5fd61a9bf698",
+      "severity": 5,
+      "intent": "cancellation",
+      "quote": "The main issue with the Spotify which I don't like is collecting a lot of data."
+    },
+    {
+      "review_id": "ab36e83b-5373-49ab-8246-1a16942796ff",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "Customer service sucks and will keep you on the hook charging you for multiple accounts for the rest of your life"
+    },
+    {
+      "review_id": "f88101f3-cffd-467f-9d25-7217281975f5",
+      "severity": 5,
+      "intent": "cancellation",
+      "quote": "Spotify Support is NEVER answering regarding double withdrawals during almost two years."
+    },
+    {
+      "review_id": "50076b04-fbd1-4a0a-9cad-b5066a243066",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "I am a premium account holder, and a song that i play regularly, Money by Lisa was hacked easily and her streams were stolen."
+    }
+  ],
+  "ISS-usability": [
+    {
+      "review_id": "f2c11a77-9616-4d3c-9ea9-85895f42ea7c",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "It just deleted all my liked songs out of nowhere and said I only had 10 when I had over 800 before."
+    },
+    {
+      "review_id": "ddaed4d6-1957-4209-93a1-76e6ef0f32ea",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "Annoying adds and they keep adding chill songs to \"adrenaline workout\" or \"200 bpm\" playlists, what a buzzkill..."
+    },
+    {
+      "review_id": "67753988-a6ac-4582-8f72-62bf0af58adc",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "After having a paid subscription for years and curating a liked songs playlist, Spotify just somehow deleted almost all of it."
+    },
+    {
+      "review_id": "c09b603b-2bc9-4ad9-91c2-7e4ea4149e9f",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "Wow, it IGNORES the songs I select, plays gawdawful music I never asked to hear, harasses me with predatory commercials that prey on addiction, AND steals my metered data to do all that, and you want ME to give YOU money????"
+    },
+    {
+      "review_id": "1b72a43a-0608-4b73-991a-b9fbe84a5ebc",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "I lost all my liked songs for no reason"
+    },
+    {
+      "review_id": "578e4e04-2a8d-48db-99dd-8bb34291ba21",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "Other than the fact they collect data they shouldn't on your phone and sell it, it keeps playing random stupid songs DESPITE the fact I turned that feature off"
+    },
+    {
+      "review_id": "87695c57-a1ed-45e9-8395-abc24f32d855",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "Worst app ever! This app has deleted all my liked songs without my permission also this app doesn't recommend new songs according to my mood"
+    },
+    {
+      "review_id": "e6b6cbef-e961-47f3-8a05-ff74e752f2ad",
+      "severity": 5,
+      "intent": "complaint",
+      "quote": "One day I logged out of my Spotify account in which I had 3 playlists but when after some time I logged back in all three were nowhere to be found I lost all 3 did everything to restore but couldn't get it ."
+    }
+  ]
+}

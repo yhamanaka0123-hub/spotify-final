@@ -1,0 +1,210 @@
+[enrich] 10000 texts already completed and saved (will NOT be re-sent); 56079 pending distinct texts, workers=4, phase=resume
+[enrich] 500 done, 0 failed, 16.0/s, spent $0.6086
+[enrich] 1000 done, 0 failed, 16.5/s, spent $0.6326
+[enrich] 1500 done, 0 failed, 16.5/s, spent $0.6566
+[enrich] interrupted; completed results are already saved
+
+[run] INTERRUPTED (Ctrl+C). Every completed result is already saved; rerun the same command to resume.
+[enrich] 11520 texts already completed and saved (will NOT be re-sent); 54559 pending distinct texts, workers=4, phase=resume
+[enrich] 500 done, 0 failed, 17.6/s, spent $0.6819
+[enrich] 1000 done, 0 failed, 17.8/s, spent $0.7058
+[enrich] 1500 done, 0 failed, 17.8/s, spent $0.7298
+[enrich] 2000 done, 0 failed, 17.5/s, spent $0.7538
+[enrich] 2500 done, 0 failed, 17.5/s, spent $0.7778
+[enrich] 3000 done, 0 failed, 16.8/s, spent $0.8018
+[enrich] 3500 done, 0 failed, 16.8/s, spent $0.8258
+[enrich] 4000 done, 0 failed, 16.6/s, spent $0.8498
+[enrich] 4500 done, 0 failed, 16.7/s, spent $0.8738
+[enrich] 5000 done, 0 failed, 15.2/s, spent $0.8978
+[enrich] 5500 done, 0 failed, 14.8/s, spent $0.9218
+[enrich] 6000 done, 0 failed, 14.6/s, spent $0.9458
+[enrich] 6500 done, 0 failed, 14.7/s, spent $0.9698
+[enrich] 7000 done, 0 failed, 14.6/s, spent $0.9938
+[enrich] 7500 done, 0 failed, 14.8/s, spent $1.0178
+[enrich] 8000 done, 0 failed, 15.0/s, spent $1.0417
+[enrich] 8500 done, 0 failed, 15.1/s, spent $1.0657
+[enrich] 9000 done, 0 failed, 15.3/s, spent $1.0897
+[enrich] 9500 done, 0 failed, 15.4/s, spent $1.1137
+[enrich] 10000 done, 0 failed, 15.5/s, spent $1.1377
+[enrich] 10500 done, 0 failed, 15.6/s, spent $1.1617
+[enrich] 11000 done, 0 failed, 15.7/s, spent $1.1857
+[enrich] 11500 done, 0 failed, 15.8/s, spent $1.2097
+[enrich] 12000 done, 0 failed, 15.9/s, spent $1.2337
+[enrich] 12500 done, 0 failed, 15.9/s, spent $1.2577
+[enrich] 13000 done, 0 failed, 16.0/s, spent $1.2817
+[enrich] 13500 done, 0 failed, 16.1/s, spent $1.3057
+[enrich] 14000 done, 0 failed, 16.1/s, spent $1.3297
+[enrich] 14500 done, 0 failed, 16.1/s, spent $1.3537
+[enrich] 15000 done, 0 failed, 16.2/s, spent $1.3777
+[enrich] 15500 done, 0 failed, 16.2/s, spent $1.4017
+[enrich] 16000 done, 0 failed, 16.3/s, spent $1.4257
+[enrich] 16500 done, 0 failed, 16.3/s, spent $1.4497
+[enrich] 17000 done, 0 failed, 16.4/s, spent $1.4736
+[enrich] 17500 done, 0 failed, 16.4/s, spent $1.4977
+[enrich] 18000 done, 0 failed, 16.5/s, spent $1.5216
+[enrich] 18500 done, 0 failed, 16.5/s, spent $1.5456
+[enrich] 19000 done, 0 failed, 16.5/s, spent $1.5696
+[enrich] 19500 done, 0 failed, 16.5/s, spent $1.5935
+[enrich] 20000 done, 0 failed, 16.5/s, spent $1.6175
+[enrich] 20500 done, 0 failed, 16.3/s, spent $1.6415
+[enrich] 21000 done, 0 failed, 16.3/s, spent $1.6655
+[enrich] 21500 done, 0 failed, 16.4/s, spent $1.6895
+[enrich] 22000 done, 0 failed, 16.4/s, spent $1.7135
+[enrich] 22500 done, 0 failed, 16.4/s, spent $1.7375
+[enrich] 23000 done, 0 failed, 16.4/s, spent $1.7615
+[enrich] 23500 done, 0 failed, 16.4/s, spent $1.7855
+[enrich] 24000 done, 0 failed, 16.4/s, spent $1.8095
+[enrich] 24500 done, 0 failed, 16.5/s, spent $1.8335
+[enrich] 25000 done, 0 failed, 16.5/s, spent $1.8574
+[enrich] 25500 done, 0 failed, 16.5/s, spent $1.8814
+[enrich] 26000 done, 0 failed, 16.5/s, spent $1.9054
+[enrich] 26500 done, 0 failed, 16.6/s, spent $1.9294
+[enrich] 27000 done, 0 failed, 16.6/s, spent $1.9535
+[enrich] 27496 done, 4 failed, 15.2/s, spent $1.9773
+[enrich] 27996 done, 4 failed, 15.2/s, spent $2.0013
+[enrich] 28496 done, 4 failed, 15.3/s, spent $2.0253
+[enrich] 28996 done, 4 failed, 15.3/s, spent $2.0493
+[enrich] 29496 done, 4 failed, 15.3/s, spent $2.0733
+[enrich] 29996 done, 4 failed, 15.4/s, spent $2.0973
+[enrich] 30496 done, 4 failed, 15.4/s, spent $2.1213
+[enrich] 30996 done, 4 failed, 15.4/s, spent $2.1454
+[enrich] 31496 done, 4 failed, 15.5/s, spent $2.1694
+[enrich] 31996 done, 4 failed, 15.5/s, spent $2.1933
+[enrich] 32496 done, 4 failed, 15.5/s, spent $2.2173
+[enrich] 32996 done, 4 failed, 15.5/s, spent $2.2413
+[enrich] 33496 done, 4 failed, 15.6/s, spent $2.2653
+[enrich] 33996 done, 4 failed, 15.6/s, spent $2.2893
+[enrich] 34496 done, 4 failed, 15.6/s, spent $2.3133
+[enrich] 34996 done, 4 failed, 15.7/s, spent $2.3373
+[enrich] 35496 done, 4 failed, 15.7/s, spent $2.3614
+[enrich] 35996 done, 4 failed, 15.7/s, spent $2.3855
+[enrich] 36496 done, 4 failed, 15.7/s, spent $2.4094
+[enrich] 36996 done, 4 failed, 15.8/s, spent $2.4334
+[enrich] 37496 done, 4 failed, 15.8/s, spent $2.4574
+[enrich] 37996 done, 4 failed, 15.8/s, spent $2.4814
+[enrich] 38496 done, 4 failed, 15.8/s, spent $2.5054
+[enrich] 38996 done, 4 failed, 15.9/s, spent $2.5294
+[enrich] 39496 done, 4 failed, 15.9/s, spent $2.5534
+[enrich] 39996 done, 4 failed, 15.9/s, spent $2.5773
+[enrich] 40496 done, 4 failed, 15.9/s, spent $2.6013
+[enrich] 40996 done, 4 failed, 16.0/s, spent $2.6253
+[enrich] 41496 done, 4 failed, 16.0/s, spent $2.6493
+[enrich] 41996 done, 4 failed, 16.0/s, spent $2.6733
+[enrich] 42496 done, 4 failed, 16.0/s, spent $2.6973
+[enrich] 42996 done, 4 failed, 16.0/s, spent $2.7213
+[enrich] 43496 done, 4 failed, 16.0/s, spent $2.7453
+[enrich] 43996 done, 4 failed, 16.0/s, spent $2.7693
+[enrich] 44496 done, 4 failed, 16.1/s, spent $2.7933
+[enrich] 44996 done, 4 failed, 16.1/s, spent $2.8174
+[enrich] 45496 done, 4 failed, 16.1/s, spent $2.8413
+[enrich] 45996 done, 4 failed, 16.1/s, spent $2.8653
+[enrich] 46496 done, 4 failed, 16.1/s, spent $2.8893
+[enrich] 46996 done, 4 failed, 16.1/s, spent $2.9133
+[enrich] 47496 done, 4 failed, 16.2/s, spent $2.9374
+[enrich] 47996 done, 4 failed, 16.2/s, spent $2.9612
+[enrich] 48496 done, 4 failed, 16.2/s, spent $2.9853
+[enrich] 48996 done, 4 failed, 16.2/s, spent $3.0093
+[enrich] 49496 done, 4 failed, 16.2/s, spent $3.0333
+[enrich] 49996 done, 4 failed, 16.2/s, spent $3.0573
+[enrich] 50496 done, 4 failed, 16.3/s, spent $3.0813
+[enrich] 50996 done, 4 failed, 16.3/s, spent $3.1053
+[enrich] 51496 done, 4 failed, 16.3/s, spent $3.1293
+[enrich] 51996 done, 4 failed, 16.3/s, spent $3.1533
+[enrich] 52496 done, 4 failed, 16.3/s, spent $3.1772
+[enrich] 52996 done, 4 failed, 16.3/s, spent $3.2013
+[enrich] 53496 done, 4 failed, 16.3/s, spent $3.2253
+[enrich] 53996 done, 4 failed, 16.4/s, spent $3.2493
+[enrich] 54496 done, 4 failed, 16.4/s, spent $3.2733
+[advisor] 561 low-confidence texts to claude-sonnet-5-5 (cap 561 = 1% of 56075 texts completed since 1791676572)
+[verify] 999/1000 verified, agreement {'topic': 0.8619, 'intent': 0.9219, 'severity': 0.8058}, 342 with disagreements
+[rank] 8 issues, 39537 memberships; counts {'source_rows': 660622, 'completed': 99996, 'quarantined': 560626, 'cache_reused_ids': 33921, 'needs_review': 12531, 'quarantine_reasons': {'not_classified_outside_budget_scope': 560609, 'empty_review_text': 13, 'classification_failed': 4}}
+[memo] recommended ISS-usability; code check problems: none
+{
+  "input": "data/spotify_reviews_18months.csv",
+  "db": "work/full.db",
+  "status": "completed",
+  "fresh": false,
+  "label_config": "jev-1.13.0+jevq-v1+schema-v1+advisor:claude-sonnet-5-5@0.5",
+  "workers": 4,
+  "phase": "resume",
+  "wall_seconds": 3965.008,
+  "stage_seconds": {
+    "prepare": 0.0,
+    "enrich_jev": 3332.682,
+    "enrich_advisor": 382.717,
+    "verify": 211.704,
+    "group_rank_memo_export": 37.343
+  },
+  "new_calls": 54634,
+  "new_calls_by_role": {
+    "enrich": 54592,
+    "verify": 40,
+    "group": 1,
+    "memo": 1
+  },
+  "new_failed_calls": 8,
+  "new_cost_usd": 3.322334,
+  "jev_completed": 54555,
+  "jev_failed": 4,
+  "advisor_relabelled": 561,
+  "counts": {
+    "source_rows": 660622,
+    "completed": 99996,
+    "quarantined": 560626,
+    "cache_reused_ids": 33921,
+    "needs_review": 12531,
+    "quarantine_reasons": {
+      "not_classified_outside_budget_scope": 560609,
+      "empty_review_text": 13,
+      "classification_failed": 4
+    }
+  },
+  "memo_problems": []
+}
+[enrich] 66075 texts already completed and saved (will NOT be re-sent); 4 pending distinct texts, workers=4, phase=resume
+[advisor] 0 low-confidence texts to claude-sonnet-5-5 (cap 0 = 1% of 56079 texts completed since 1791676572)
+[verify] reused saved verification (same enrich config)
+[rank] 8 issues, 39538 memberships; counts {'source_rows': 660622, 'completed': 100000, 'quarantined': 560622, 'cache_reused_ids': 33921, 'needs_review': 12532, 'quarantine_reasons': {'not_classified_outside_budget_scope': 560609, 'empty_review_text': 13}}
+[group] reused cached issue names (same inputs/config, no call)
+[memo] recommended ISS-usability; code check problems: none
+{
+  "input": "data/spotify_reviews_18months.csv",
+  "db": "work/full.db",
+  "status": "completed",
+  "fresh": false,
+  "label_config": "jev-1.13.0+jevq-v1+schema-v1+advisor:claude-sonnet-5-5@0.5",
+  "workers": 4,
+  "phase": "resume",
+  "wall_seconds": 36.735,
+  "stage_seconds": {
+    "prepare": 0.0,
+    "enrich_jev": 2.595,
+    "enrich_advisor": 2.754,
+    "verify": 0.002,
+    "group_rank_memo_export": 30.271
+  },
+  "new_calls": 5,
+  "new_calls_by_role": {
+    "enrich": 4,
+    "verify": 0,
+    "group": 0,
+    "memo": 1
+  },
+  "new_failed_calls": 0,
+  "new_cost_usd": 0.026289,
+  "jev_completed": 4,
+  "jev_failed": 0,
+  "advisor_relabelled": 0,
+  "counts": {
+    "source_rows": 660622,
+    "completed": 100000,
+    "quarantined": 560622,
+    "cache_reused_ids": 33921,
+    "needs_review": 12532,
+    "quarantine_reasons": {
+      "not_classified_outside_budget_scope": 560609,
+      "empty_review_text": 13
+    }
+  },
+  "memo_problems": []
+}

@@ -1,0 +1,24 @@
+[scope] 66079 distinct texts (incl. 49 golden) cover 100000 review IDs
+[enrich] 10000 pending distinct texts, workers=4, label_config=jev-1.13.0+jevq-v1+schema-v1+advisor:claude-sonnet-5-5@0.5
+[enrich] 500 done, 0 failed, 17.3/s, spent $0.0240
+[enrich] 1000 done, 0 failed, 17.5/s, spent $0.0481
+[enrich] 1500 done, 0 failed, 17.6/s, spent $0.0720
+[enrich] 2000 done, 0 failed, 17.4/s, spent $0.0960
+[enrich] 2500 done, 0 failed, 16.9/s, spent $0.1200
+[enrich] 3000 done, 0 failed, 17.1/s, spent $0.1440
+[enrich] 3500 done, 0 failed, 17.2/s, spent $0.1680
+[enrich] 4000 done, 0 failed, 17.3/s, spent $0.1920
+[enrich] 4500 done, 0 failed, 17.3/s, spent $0.2160
+[enrich] 5000 done, 0 failed, 17.4/s, spent $0.2400
+[enrich] 5500 done, 0 failed, 17.4/s, spent $0.2640
+[enrich] 6000 done, 0 failed, 17.5/s, spent $0.2880
+[enrich] 6500 done, 0 failed, 17.5/s, spent $0.3121
+[enrich] 7000 done, 0 failed, 17.6/s, spent $0.3360
+[enrich] 7500 done, 0 failed, 17.6/s, spent $0.3600
+[enrich] 8000 done, 0 failed, 17.6/s, spent $0.3840
+[enrich] 8500 done, 0 failed, 17.6/s, spent $0.4080
+[enrich] 9000 done, 0 failed, 17.6/s, spent $0.4320
+[enrich] 9500 done, 0 failed, 17.7/s, spent $0.4559
+[enrich] 10000 done, 0 failed, 17.7/s, spent $0.4799
+[run] stopped after dispatching 10000 texts (interruption demo)
+exit 1
