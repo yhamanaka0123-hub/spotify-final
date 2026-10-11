@@ -235,6 +235,16 @@ def _criteria(q):
     return "; ".join(f"{k} = {v}" for k, v in q.criteria.items())
 
 
+ADVISOR_SCHEMA = {"type": "object", "additionalProperties": False, "required": ["items"], "properties": {"items": {
+    "type": "array", "items": {"type": "object", "additionalProperties": False,
+                               "required": ["id", "topic", "intent", "severity", "sentiment", "evidence_quote"],
+                               "properties": {"id": {"type": "string"}, "topic": {"enum": list(TOPICS)},
+                                              "intent": {"enum": list(INTENTS)},
+                                              "severity": {"type": "integer", "enum": [1, 2, 3, 4, 5]},
+                                              "sentiment": {"type": "number"},
+                                              "evidence_quote": {"type": "string"}}}}}}
+
+
 def run_advisor(con, run, since=0.0):
     """Advise only texts Jev completed at/after `since` (this phase), so a resumed run never re-sends
     texts saved before the checkpoint. Cap: ADVISOR_MAX_FRACTION of the texts completed in that window."""
@@ -257,14 +267,7 @@ def run_advisor(con, run, since=0.0):
     client = anthropic.Anthropic(max_retries=3)
     system = ADVISOR_SYSTEM.format(topics=_criteria(labels.TOPIC), intents=_criteria(labels.INTENT),
                                    severities=_criteria(labels.SEVERITY))
-    schema = {"type": "object", "additionalProperties": False, "required": ["items"], "properties": {"items": {
-        "type": "array", "items": {"type": "object", "additionalProperties": False,
-                                   "required": ["id", "topic", "intent", "severity", "sentiment", "evidence_quote"],
-                                   "properties": {"id": {"type": "string"}, "topic": {"enum": list(TOPICS)},
-                                                  "intent": {"enum": list(INTENTS)},
-                                                  "severity": {"type": "integer", "enum": [1, 2, 3, 4, 5]},
-                                                  "sentiment": {"type": "number"},
-                                                  "evidence_quote": {"type": "string"}}}}}}
+    schema = ADVISOR_SCHEMA
     changed = 0
     for i in range(0, len(rows), ADVISOR_BATCH):
         batch = rows[i:i + ADVISOR_BATCH]
